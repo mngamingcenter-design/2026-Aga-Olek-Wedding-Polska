@@ -972,30 +972,48 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
     };
 
     function switchLanguage(lang) {
-      document.documentElement.lang = lang;
-      
-      const buttons = ['lang-es', 'lang-pl', 'lang-es-mobile', 'lang-pl-mobile'];
-      buttons.forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) btn.classList.toggle('active', id.includes(lang));
-      });
-      
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-      
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) {
-          el.placeholder = translations[lang][key];
-        }
-      });
-      
-      updateCountdown();
+  document.documentElement.lang = lang;
+
+  // Actualizar botones activos (escritorio y móvil)
+  const buttons = ['lang-es', 'lang-pl', 'lang-es-mobile', 'lang-pl-mobile'];
+  buttons.forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.classList.toggle('active', id.includes(lang));
+  });
+
+  // Traducir textos estáticos
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
     }
+  });
+
+  // Traducir placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
+
+  // 🔥 NUEVO: Cerrar el menú móvil automáticamente después de cambiar idioma
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileBtnIcon = document.querySelector('#mobile-menu-btn i');
+  
+  if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+    mobileMenu.classList.add('hidden');
+    
+    // Cambiar el ícono de vuelta a "menu" (hamburguesa)
+    if (mobileBtnIcon) {
+      mobileBtnIcon.setAttribute('data-lucide', 'menu');
+      lucide.createIcons(); // Refrescar el ícono
+    }
+  }
+
+  // Forzar actualización del cronómetro
+  updateCountdown();
+}
     
     function toggleMap(mapId) {
       const mapContainer = document.getElementById(mapId);
