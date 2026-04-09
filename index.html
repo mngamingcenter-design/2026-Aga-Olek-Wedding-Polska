@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  
+  <!-- Título y descripción principal -->
   <title data-i18n="page.title">Agnieszka & Mario Alejandro - Boda 18 Septiembre 2026</title>
-  <meta name="description" content="Te invitamos a celebrar nuestra boda el viernes 18 de septiembre de 2026. Agnieszka Bonikowska y Mario Alejandro Aguirre Bolivar.">
+  <meta name="description" content="Te invitamos a celebrar nuestra boda el viernes 18 de septiembre de 2026. Agnieszka Bonikowska y Mario Alejandro Aguirre Bolivar. ¡Confirma tu asistencia!">
+  <meta name="keywords" content="boda, wedding, Agnieszka, Mario, Zielona Góra, Polonia, septiembre 2026">
+  <meta name="author" content="Agnieszka Bonikowska & Mario Alejandro Aguirre Bolivar">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="es">
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tusitio.com/">
+  <meta property="og:title" content="Agnieszka & Mario Alejandro - Nuestra Boda">
+  <meta property="og:description" content="18 de septiembre 2026 - Te esperamos en Zielona Góra para celebrar nuestro amor. Confirma tu asistencia.">
+  <meta property="og:image" content="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Boda Aga & Olek">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Agnieszka & Mario Alejandro - Nuestra Boda">
+  <meta name="twitter:description" content="18 de septiembre 2026 - Te esperamos en Zielona Góra para celebrar nuestro amor.">
+  <meta name="twitter:image" content="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg">
+  
+  <!-- WhatsApp / Mensajería -->
+  <meta property="og:image:alt" content="Agnieszka y Mario Alejandro - Pareja feliz">
+
+  <!-- ===== OPTIMIZACIÓN DE CARGA ===== -->
+  <!-- Preconnect para dominios externos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://i.ibb.co">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  
+  <!-- Preload de la imagen principal (hero) para móvil y escritorio -->
+  <link rel="preload" as="image" href="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg" media="(min-width: 768px)">
+  <link rel="preload" as="image" href="https://i.ibb.co/r2BVK7yJ/IMGnew.png" media="(max-width: 767px)">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -132,10 +170,6 @@
       background: hsl(33, 24%, 44%);
       border-radius: 10px;
     }
-    .carousel-slide {
-      flex: 0 0 100%;
-      scroll-snap-align: start;
-    }
     .carousel-btn {
       position: absolute;
       top: 50%;
@@ -163,96 +197,309 @@
       background: hsl(33, 24%, 44%);
       width: 1.5rem;
     }
+    /* Control de posición para imagen móvil */
+    .hero-image-mobile {
+      object-position: center 50% 50%;
+    }  
+    .carousel-slide img {
+      width: auto;
+      max-width: 85%;
+      max-height: 85%;
+      object-fit: contain;
+    }
+        /* Optimización de rendimiento */
+    img {
+      content-visibility: auto;
+    }
+
+        /* Estilos mejorados para el selector de idioma */
+    .language-selector {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Estado cuando el header está scrolleado (fondo blanco) */
+    header.scrolled .language-selector {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    header.scrolled .language-selector .lang-btn {
+      color: hsl(33, 24%, 44%); /* Color primary de tu web */
+    }
+    
+    header.scrolled .language-selector .lang-btn.active {
+      color: hsl(33, 24%, 44%);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    
+    header.scrolled .language-selector .lang-separator {
+      color: rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Estado normal (header transparente) */
+    .language-selector .lang-btn {
+      color: white;
+    }
+    
+    .language-selector .lang-btn.active {
+      color: white;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    
+    .language-selector .lang-separator {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    /* Hover effects */
+    .language-selector .lang-btn:hover {
+      opacity: 0.8;
+      transform: scale(1.02);
+    }
+    
+    /* Versión móvil: más compacto */
+     @media (max-width: 768px) {
+      .language-selector {
+        padding: 0.375rem 0.75rem;
+      }
+      .language-selector .lang-btn {
+        font-size: 0.875rem;
+        padding: 0 0.5rem;
+      }
+    }
+
+        /* Mejoras de contraste para accesibilidad */
+    
+    /* Asegurar contraste mínimo en textos sobre fondo blanco */
+    .bg-white .text-secondary,
+    .bg-white .text-secondary\/80,
+    .bg-white .text-secondary\/70 {
+      color: #2c2c2c !important; /* Contraste > 4.5:1 */
+    }
+    
+    /* Textos sobre fondos claros */
+    .bg-accent\/30 .text-secondary,
+    .bg-accent\/20 .text-secondary {
+      color: #2c2c2c;
+    }
+    
+    /* Links en hover con indicación visual adicional */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid hsl(33, 24%, 44%);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    
+    /* Mejor contraste para textos pequeños */
+    .text-muted-foreground {
+      color: #5a5a5a; /* Más oscuro que el original */
+    }
+    
+    /* Indicador visual para focus en móvil */
+    @media (max-width: 768px) {
+      a:active, button:active {
+        opacity: 0.7;
+      }
+    }  
+           
+    /* Fondo BLUR - usando backdrop-filter (puro CSS, 0 imágenes) */
+    .carousel-slide .carousel-blur-bg {
+      position: absolute;
+      inset: 0;
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px);
+      transform: scale(1.1);
+      opacity: 0.85;
+      transition: filter 0.3s ease;
+    }
+    
+    /* Superposición cálida (opcional - da calidez al blur) */
+    .carousel-slide .carousel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(210, 180, 140, 0.15) 0%,
+        rgba(160, 130, 90, 0.1) 100%
+      );
+      z-index: 5;
+    }
+    
+    /* Imagen principal nítida */
+    .carousel-slide .carousel-image {
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .carousel-slide:hover .carousel-image {
+      transform: scale(1.02);
+    }
+    .carousel-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: hidden;
+      background-color: #f5f1e8;
+    }
+
+    /* Para móvil - ajuste de aspecto */
+     .carousel-slide {
+  min-height: auto;
+     }
+
+    .carousel-slide .relative.z-10 {
+      position: relative;
+      height: auto;
+      min-height: auto;
+      padding: 1rem;
+    }
+    
+    /* Mejora de los botones del carrusel */
+    .carousel-btn {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .carousel-btn:hover {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+    }
+    
+    /* Dots mejorados */
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .carousel-dot.active {
+      background: hsl(33, 24%, 44%);
+      width: 24px;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body class="antialiased">
+  
+  <!-- Skip to content link para lectores de pantalla -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:p-3 focus:rounded-lg">
+    Saltar al contenido principal</a>
 
-  <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center gap-3">
-          <i data-lucide="heart" class="w-6 h-6 text-white header-icon transition-colors duration-300"></i>
-          <div>
-            <h1 class="text-xl font-bold font-heading text-white header-text transition-colors duration-300">Aga & Olek</h1>
-            <p class="text-sm font-body text-white/90 header-subtext transition-colors duration-300">#Aga&Olek2026❤️</p>
-          </div>
+  <!-- Header - Versión COMPLETA (Web + Móvil) -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-3 md:py-4">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between">
+      
+      <!-- Logo izquierda (SIEMPRE visible) -->
+      <div class="flex items-center gap-2">
+        <i data-lucide="heart" class="w-5 h-5 md:w-6 md:h-6 text-white header-icon transition-colors duration-300"></i>
+        <div>
+          <h1 class="text-lg md:text-xl font-bold font-heading text-white header-text transition-colors duration-300">Aga & Olek</h1>
+          <p class="text-xs md:text-sm font-body text-white/90 header-subtext transition-colors duration-300 hidden sm:block">#Aga&Olek2026❤️</p>
         </div>
-
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="#inicio" data-i18n="nav.home" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Inicio</a>
-          <a href="#mensaje" data-i18n="nav.message" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Mensaje</a>
-          <a href="#historia" data-i18n="nav.story" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Historia</a>
-          <a href="#galeria-nueva" data-i18n="nav.gallery" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Galería</a>
-          <a href="#itinerario" data-i18n="nav.program" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Programa</a>
-          <a href="#rsvp" data-i18n="nav.rsvp" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">RSVP</a>
-          <a href="#informacion" data-i18n="nav.info" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Información</a>
-
-          <div class="flex items-center gap-2 pl-6 border-l border-white/30 ml-6">
-            <button type="button" onclick="switchLanguage('es')" id="lang-es" class="lang-btn active text-white text-sm font-medium">ES</button>
-            <span class="text-white/50">/</span>
-            <button type="button" onclick="switchLanguage('pl')" id="lang-pl" class="lang-btn text-white text-sm font-medium">PL</button>
-          </div>
-        </nav>
-
-        <button id="mobile-menu-btn" class="md:hidden text-white header-icon transition-colors duration-300 z-50 relative">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
       </div>
-    </div>
-  </header>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg px-6 py-6 space-y-4 fixed top-20 left-0 w-full z-40">
-    <a href="#inicio" data-i18n="nav.home" class="block mobile-link">Inicio</a>
-    <a href="#mensaje" data-i18n="nav.message" class="block mobile-link">Mensaje</a>
-    <a href="#historia" data-i18n="nav.story" class="block mobile-link">Historia</a>
-    <a href="#galeria-nueva" data-i18n="nav.gallery" class="block mobile-link">Galería</a>
-    <a href="#itinerario" data-i18n="nav.program" class="block mobile-link">Programa</a>
-    <a href="#rsvp" data-i18n="nav.rsvp" class="block mobile-link">RSVP</a>
-    <a href="#informacion" data-i18n="nav.info" class="block mobile-link">Información</a>
-    <div class="flex gap-4 pt-4 border-t">
-      <button onclick="switchLanguage('es')" id="lang-es-mobile" class="lang-btn active">ES</button>
-      <button onclick="switchLanguage('pl')" id="lang-pl-mobile" class="lang-btn">PL</button>
+      <!-- Navegación WEB (visible solo en escritorio) -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="#inicio" data-i18n="nav.home" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Inicio</a>
+        <a href="#mensaje" data-i18n="nav.message" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Mensaje</a>
+        <a href="#historia" data-i18n="nav.story" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Historia</a>
+        <a href="#galeria-nueva" data-i18n="nav.gallery" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Galería</a>
+        <a href="#itinerario" data-i18n="nav.program" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Programa</a>
+        <a href="#rsvp" data-i18n="nav.rsvp" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">RSVP</a>
+        <a href="#informacion" data-i18n="nav.info" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Información</a>
+      </nav>
+
+      <!-- Grupo derecha: Selector de idioma + Menú hamburguesa (móvil) -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Selector de idioma SIEMPRE visible - CON ESTILOS MEJORADOS -->
+      <div class="language-selector flex items-center gap-1 rounded-full px-3 py-1.5 md:px-4 md:py-2 transition-all duration-300" 
+      style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2);">
+      <button onclick="switchLanguage('es')" id="lang-es" 
+        class="lang-btn text-sm md:text-base font-medium px-1.5 transition-colors duration-300" aria-label="Cambiar a español">ES</button>
+      <button onclick="switchLanguage('pl')" id="lang-pl" 
+        class="lang-btn text-sm md:text-base font-medium px-1.5 transition-colors duration-300" aria-label="Zmień na polski">PL</button>
+      </div>
+        
+        <!-- Botón menú hamburguesa (SOLO visible en móvil) -->
+       <button id="mobile-menu-btn" class="md:hidden text-white header-icon"
+       aria-label="Menú de navegación" aria-expanded="false"><i data-lucide="menu" class="w-6 h-6"></i>
+       </button>
+      </div>
     </div>
   </div>
+</header>
 
-  <!-- ==================== SECCIÓN HERO - CON IMAGEN RESPONSIVE ==================== -->
-  <section id="inicio" class="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0">
-      <!-- Imagen de fondo borrosa para efecto -->
-      <picture>
-        <source media="(max-width: 768px)" srcset="https://i.ibb.co/HT84ZDwN/IMG-9896.jpg">
-        <source media="(min-width: 769px)" srcset="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg">
-        <img src="https://i.ibb.co/k6DwMm39/2.jpg" alt="Agnieszka & Mario Alejandro" class="w-full h-full object-cover">
-      </picture>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80"></div>
-    </div>
+<!-- Mobile Menu - SOLO para móvil (sin el selector de idioma porque ya está fuera) -->
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl rounded-b-2xl px-6 py-6 space-y-4 fixed top-16 left-4 right-4 z-40">
+  <a href="#inicio" data-i18n="nav.home" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Inicio</a>
+  <a href="#mensaje" data-i18n="nav.message" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Mensaje</a>
+  <a href="#historia" data-i18n="nav.story" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Historia</a>
+  <a href="#galeria-nueva" data-i18n="nav.gallery" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Galería</a>
+  <a href="#itinerario" data-i18n="nav.program" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Programa</a>
+  <a href="#rsvp" data-i18n="nav.rsvp" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">RSVP</a>
+  <a href="#informacion" data-i18n="nav.info" class="block py-2 text-secondary font-body text-lg">Información</a>
+</div>
 
-    <div class="relative z-10 text-center px-5 sm:px-8 max-w-4xl mx-auto fade-in pt-12 md:pt-0">
-      <div class="mb-8">
-        <div class="mb-6 md:mb-10">
-          <span class="text-4xl md:text-6xl text-primary/80">✧</span>
-        </div>
-        
-        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-tight drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
-          <span class="font-script-hero block text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem]">Agnieszka</span>
-          <span class="font-script-hero block text-primary/90 my-2 sm:my-4 text-[3rem] sm:text-[4rem] md:text-[5rem]">&</span>
-          <span class="font-script-hero block text-[2.4rem] sm:text-[3rem] md:text-[4rem]">Mario Alejandro</span>
-        </h1>
+  <!-- ==================== SECCIÓN HERO - IMAGEN OPTIMIZADA ==================== -->
+<section id="inicio" class="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <!-- Imagen para escritorio (cargada con preload) -->
+    <picture>
+      <source media="(min-width: 768px)" srcset="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg">
+      <source media="(max-width: 767px)" srcset="https://i.ibb.co/r2BVK7yJ/IMGnew.png">
+      <img src="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg" 
+           alt="Agnieszka & Mario Alejandro - Nuestra historia de amor"
+           class="w-full h-full object-cover"
+           fetchpriority="high"
+           decoding="async">
+    </picture>
+    
+    <!-- Gradiente para mejorar legibilidad del texto -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70"></div>
+  </div>
 
-        <div class="inline-block border-t border-b border-white/30 py-4 px-6 sm:px-10 my-6 md:my-10">
-          <p data-i18n="hero.date" class="text-xl sm:text-2xl md:text-3xl text-white font-body tracking-widest">Viernes 18 de septiembre 2026</p>
-        </div>
+  <div class="relative z-10 text-center px-5 sm:px-8 max-w-4xl mx-auto fade-in" style="padding-top: 15rem;">
+    <div class="mb-8">
+      <div class="mb-6 md:mb-10">
+        <span class="text-4xl md:text-6xl text-primary/80">✧</span>
+      </div>
+      
+      <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-tight drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
+        <span class="font-script-hero block text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem]">Agnieszka</span>
+        <span class="font-script-hero block text-primary/90 my-2 sm:my-4 text-[3rem] sm:text-[4rem] md:text-[5rem]">&</span>
+        <span class="font-script-hero block text-[2.4rem] sm:text-[3rem] md:text-[4rem]">Mario Alejandro</span>
+      </h1>
 
-        <p data-i18n="hero.subtitle" class="text-lg sm:text-xl md:text-2xl text-white/90 font-body italic">Nos casamos y queremos celebrarlo contigo</p>
+      <div class="inline-block border-t border-b border-white/30 py-4 px-6 sm:px-10 my-6 md:my-10">
+        <p data-i18n="hero.date" class="text-xl sm:text-2xl md:text-3xl text-white font-body tracking-widest">Viernes 18 de septiembre 2026</p>
+      </div>
 
-        <div class="mt-8 md:mt-12">
-          <span class="text-4xl md:text-6xl text-primary/80">✧</span>
-        </div>
+      <p data-i18n="hero.subtitle" class="text-lg sm:text-xl md:text-2xl text-white/90 font-body italic">Nos casamos y queremos celebrarlo contigo</p>
+
+      <div class="mt-8 md:mt-12">
+        <span class="text-4xl md:text-6xl text-primary/80">✧</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Countdown Timer -->
   <section class="w-full py-16 md:py-24 bg-gradient-to-b from-accent/30 to-background">
@@ -289,7 +536,7 @@
 
       <div class="bg-accent/30 rounded-2xl p-8 md:p-12 shadow-elegant fade-in text-center">
         <p data-i18n="message.text1" class="text-xl md:text-2xl font-body text-secondary/80 leading-relaxed italic mb-6">
-          "Queridos amigos y familia..."
+          "Querida Familia y Amigos..."
         </p>
         <p data-i18n="message.text2" class="text-lg md:text-xl font-body text-secondary/70 leading-relaxed">
           Este día es especial no solo por nosotros, sino porque ustedes son parte de nuestra historia. 
@@ -326,9 +573,9 @@
               <i data-lucide="heart" class="w-8 h-8 text-primary"></i>
             </div>
             <div class="flex-1">
-              <h3 data-i18n="story.meet.title" class="text-2xl font-heading text-primary mb-4">✨ Cómo nos conocimos ✨</h3>
+              <h3 data-i18n="story.meet.title" class="text-2xl font-heading text-center mb-4">✨ Cómo nos conocimos ✨</h3>
               <p data-i18n="story.meet.text1" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
-                Nuestro camino se cruzó en [lugar] cuando menos lo esperábamos. Desde aquella primera conversación, 
+                Nuestro camino se cruzó  cuando menos lo esperábamos. Desde aquella primera conversación, 
                 supimos que algo especial estaba naciendo. Cada momento compartido fue construyendo esta historia 
                 que hoy celebramos.
               </p>
@@ -341,22 +588,36 @@
                 estan dispuesto a dar del uno al otro..
               </p>             
            
-              <h3 data-i18n="story.proposal.title" class="text-2xl font-heading text-primary mb-4 mt-8">💍 La propuesta 💍</h3>
+              <h3 data-i18n="story.proposal.title" class="text-2xl font-heading text-center mb-4 mt-8">💍 La propuesta 💍</h3>
               <p data-i18n="story.proposal.text1" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
               Fue realmente un dia inovidable. Un 'si' que cambiaria nuestras vidas para siempre.            
               </p>
-              <p data-i18n="story.proposal.text2" class="text-lg text-secondary/80 font-body leading-relaxed">
+              <p data-i18n="story.proposal.text2" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
                 Mario Alejandro:
-                Recuerdo que practicaba a solas las palabras que queria que escuche y que sepa que  hablaba con el corazon.
+                Recuerdo que practicaba a solas las palabras que queria que escuche y que sepa que hablaba con el corazon.
                 En un viaje a "Montenegro" visitamos 3 ciudades, no me sentia tan contento en proponerle matrimonio en esas dos primeras ciudades,
                 pero la ultima ciudad "Budva" fue el mejor lugar, en la playa, con el sonido del mar, bailando como dos almas que se olvidan del mundo 
                 por que solo se necesitan del uno al otro... el corazon me latia muy rapido.. y supe que el momento de las palabras que estuve practicando
                 tenian que salir de mi boca.. despues de unas bonitas palabras, con muchos nervios y con todo mi amor dije: "Agnieszka Bonikowska , te gustaria casarte conmigo"... 
               </p>
-              <p data-i18n="story.proposal.text3" class="text-lg text-secondary/80 font-body leading-relaxed">
-                El resto de la historia se cuenta sola... ❤️
+              
+
+              <p data-i18n="story.proposal.text4" class="text-lg text-secondary/80 font-body leading-relaxed">
+                Agnieszka: ¿Y yo? Aunque Mario intentaba disimular sus nervios valientemente, podía ver en sus ojos que algo se traía entre manos... Cuando pronunció aquellas palabras, el mundo se detuvo por un instante y en mi mente solo había una respuesta.
               </p>
 
+              <p data-i18n="story.proposal.text5" class="text-lg text-secondary/80 font-body leading-relaxed">
+                Desde ese momento, cada vez que miro mi anillo, todas esas emociones vuelven a mí. No solo veo el brillo de aquella noche en Budva, sino sobre todo nuestro futuro juntos.
+              </p>
+
+              <p data-i18n="story.proposal.text6" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                Me llena una alegría inmensa y esa dulce e impaciente espera por todo lo que nos queda por vivir. Sé que nuestra boda y celebrar con todos ustedes es solo el comienzo: uno de los muchos días maravillosos que aún están por venir.
+              </p>
+
+              <p data-i18n="story.proposal.text3" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                El resto de la historia se cuenta sola... ❤️
+              </p>
+              
             </div>
           </div>
         </div>
@@ -368,86 +629,155 @@
     </div>
   </section>
 
-  <!-- ==================== NUEVA SECCIÓN: GALERÍA DE RECUERDOS (CARRUSEL 6 FOTOS) ==================== -->
-  <section id="galeria-nueva" class="w-full py-16 md:py-24 bg-white">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <div class="text-center mb-12 fade-in">
-        <div class="flex items-center justify-center gap-4 mb-4">
-          <span class="text-xl md:text-2xl text-primary/60">✧</span>
-          <h2 data-i18n="gallery.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Galería de recuerdos</h2>
-          <span class="text-xl md:text-2xl text-primary/60">✧</span>
-        </div>
-        <p data-i18n="gallery.subtitle" class="text-lg text-muted-foreground font-body">Momentos que atesoramos para siempre</p>
+  <!-- ==================== GALERÍA CON BLUR CSS OPTIMIZADO ==================== -->
+<section id="galeria-nueva" class="w-full py-16 md:py-24 bg-white">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="text-center mb-12 fade-in">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <span class="text-xl md:text-2xl text-primary/60">✧</span>
+        <h2 data-i18n="gallery.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Galería de recuerdos</h2>
+        <span class="text-xl md:text-2xl text-primary/60">✧</span>
       </div>
+      <p data-i18n="gallery.subtitle" class="text-lg text-muted-foreground font-body">Momentos que atesoramos para siempre</p>
+    </div>
 
-      <!-- Carrusel de 6 fotos -->
-      <div class="carousel-container relative max-w-4xl mx-auto rounded-xl shadow-elegant fade-in">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Foto 1 -->
-          <div class="carousel-slide">
-            <img src="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg" alt="Recuerdo 1" class="w-full h-auto object-cover" style="max-height: 500px; width: 100%;">
-          </div>
-          <!-- Foto 2 -->
-          <div class="carousel-slide">
-            <img src="https://i.ibb.co/HT84ZDwN/IMG-9896.jpg" alt="Recuerdo 2" class="w-full h-auto object-cover" style="max-height: 500px; width: 100%;">
-          </div>
-          <!-- Foto 3 - Espacio para agregar -->
-          <div class="carousel-slide">
-            <div class="bg-accent/30 w-full flex items-center justify-center" style="min-height: 400px;">
-              <div class="text-center p-8">
-                <i data-lucide="camera" class="w-12 h-12 text-primary/40 mx-auto mb-4"></i>
-                <p data-i18n="gallery.placeholder" class="text-muted-foreground font-body">📷 Agrega aquí tu foto 3</p>
-                <p class="text-sm text-muted-foreground">Reemplaza src="URL_FOTO_3"</p>
-              </div>
-            </div>
-          </div>
-          <!-- Foto 4 - Espacio para agregar -->
-          <div class="carousel-slide">
-            <div class="bg-accent/30 w-full flex items-center justify-center" style="min-height: 400px;">
-              <div class="text-center p-8">
-                <i data-lucide="camera" class="w-12 h-12 text-primary/40 mx-auto mb-4"></i>
-                <p data-i18n="gallery.placeholder" class="text-muted-foreground font-body">📷 Agrega aquí tu foto 4</p>
-                <p class="text-sm text-muted-foreground">Reemplaza src="URL_FOTO_4"</p>
-              </div>
-            </div>
-          </div>
-          <!-- Foto 5 - Espacio para agregar -->
-          <div class="carousel-slide">
-            <div class="bg-accent/30 w-full flex items-center justify-center" style="min-height: 400px;">
-              <div class="text-center p-8">
-                <i data-lucide="camera" class="w-12 h-12 text-primary/40 mx-auto mb-4"></i>
-                <p data-i18n="gallery.placeholder" class="text-muted-foreground font-body">📷 Agrega aquí tu foto 5</p>
-                <p class="text-sm text-muted-foreground">Reemplaza src="URL_FOTO_5"</p>
-              </div>
-            </div>
-          </div>
-          <!-- Foto 6 - Espacio para agregar -->
-          <div class="carousel-slide">
-            <div class="bg-accent/30 w-full flex items-center justify-center" style="min-height: 400px;">
-              <div class="text-center p-8">
-                <i data-lucide="camera" class="w-12 h-12 text-primary/40 mx-auto mb-4"></i>
-                <p data-i18n="gallery.placeholder" class="text-muted-foreground font-body">📷 Agrega aquí tu foto 6</p>
-                <p class="text-sm text-muted-foreground">Reemplaza src="URL_FOTO_6"</p>
-              </div>
-            </div>
+    <!-- Carrusel con efecto BLUR CSS (sin imágenes duplicadas) -->
+    <div class="carousel-container relative max-w-4xl mx-auto rounded-xl shadow-elegant fade-in">
+      <div class="carousel-track" id="carouselTrack">
+        
+        <!-- Slide 1 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center" style="min-height: 500px;">
+            <img src="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg" 
+                 class="carousel-image w-full h-auto max-h-[70vh] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Agnieszka y Mario Alejandro - momento especial">
           </div>
         </div>
         
-        <!-- Botones de navegación -->
-        <button id="prevBtn" class="carousel-btn left-4">
-          <i data-lucide="chevron-left" class="w-6 h-6 text-primary"></i>
-        </button>
-        <button id="nextBtn" class="carousel-btn right-4">
-          <i data-lucide="chevron-right" class="w-6 h-6 text-primary"></i>
-        </button>
+        <!-- Slide 2 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/JR8P0fGt/IMG-0840.avif" 
+                 class="carousel-image w-full h-auto max-h-[70vh] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Pareja feliz - recuerdo de viaje">
+          </div>
+        </div>
         
-        <!-- Dots de navegación -->
-        <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10" id="carouselDots"></div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/CKC1DhH9/7So-YV.jpg" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Momento romántico juntos">
+          </div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/d04VkN7X/IMG-0570.jpg" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Celebrando nuestro amor">
+          </div>
+        </div>
+        
+        <!-- Slide 5 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/CKXzD6XF/IMG-4524.jpg" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Día especial juntos">
+          </div>
+        </div>
+        
+        <!-- Slide 6 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/JR7s65qk/IMG-9458.avif" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Sonrisas y amor">
+          </div>
+        </div>
+        
+        <!-- Slide 7 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/20BYD1H8/IMG-9246.avif" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Viaje inolvidable">
+          </div>
+        </div>
+        
+        <!-- Slide 8 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/R4VqXsdS/IMG-0855.avif" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Nuestra historia de amor">
+          </div>
+        </div>
+        
+        <!-- Slide 9 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/R4VqXsdS/IMG-0855.avif" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Nuestra historia de amor">
+          </div>
+        </div>
       </div>
       
-      <p data-i18n="gallery.footer" class="text-center text-sm text-muted-foreground mt-6 font-body italic">✧ Desliza para ver más momentos especiales ✧</p>
+      <!-- Botones de navegación -->
+      <button id="prevBtn" class="carousel-btn left-2 md:left-4" aria-label="Imagen anterior">
+        <i data-lucide="chevron-left" class="w-5 h-5 md:w-6 md:h-6 text-white drop-shadow-md"></i>
+      </button>
+      <button id="nextBtn" class="carousel-btn right-2 md:right-4" aria-label="Imagen siguiente">
+        <i data-lucide="chevron-right" class="w-5 h-5 md:w-6 md:h-6 text-white drop-shadow-md"></i>
+      </button>
+      
+      <!-- Dots -->
+      <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20" id="carouselDots"></div>
     </div>
-  </section>
+    
+    <p data-i18n="gallery.footer" class="text-center text-sm text-muted-foreground mt-6 font-body italic">✧ Desliza para ver más momentos especiales ✧</p>
+  </div>
+</section>
 
   <!-- SECCIÓN ITINERARIO (existente, se mantiene igual) -->
   <section id="itinerario" class="w-full py-16 md:py-24 bg-white">
@@ -473,11 +803,11 @@
                     <i data-lucide="church" class="w-6 h-6 text-primary"></i>
                   </div>
                   <div class="flex-1">
-                    <div class="text-sm font-medium text-primary uppercase tracking-widest mb-2">15:00h</div>
+                    <div data-i18n="prog.misa2" ext-sm font-medium text-primary uppercase tracking-widest mb-2">15:00H</div>
                     <h3 data-i18n="prog.misa" class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">MISA</h3>
                     <div class="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                       <i data-lucide="map-pin" class="w-4 h-4"></i>
-                      <span class="font-body" data-i18n="info.misa.location">Iglesia Św. Mikołaja w Zielonej Górze - Raculi.</span>
+                      <span class="font-body" data-i18n="info.misa.location">Iglesia Św. Mikołaja w Zielonej Górze - Raculi</span>
                     </div>
                     <button type="button" onclick="toggleMap('map-iglesia')" data-i18n="prog.map.church" class="btn-primary flex items-center justify-center gap-2 px-6 py-3 w-full md:w-auto mx-auto">
                       Ver mapa de la iglesia
@@ -504,7 +834,7 @@
                     <p data-i18n="prog.recep.desc" class="text-base text-secondary/70 font-body mb-4">Inicio de la celebración</p>
                     <div class="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                       <i data-lucide="map-pin" class="w-4 h-4"></i>
-                      <span class="font-body" data-i18n="info.recep.location">ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia.</span>
+                      <span class="font-body" data-i18n="info.recep.location">ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia</span>
                     </div>
                     <button type="button" onclick="toggleMap('map-recepcion')" data-i18n="prog.map.recep" class="btn-primary flex items-center justify-center gap-2 px-6 py-3 w-full md:w-auto mx-auto">
                       Ver mapa de la recepción
@@ -518,24 +848,7 @@
             </div>
             <div class="hidden md:block absolute left-1/2 w-3 h-3 bg-primary rounded-full border-2 border-white transform md:-translate-x-1/2 shadow-sm"></div>
           </div>
-
-          <div class="relative flex items-center md:flex-row fade-in">
-            <div class="flex-1 md:pr-16 pl-6 md:pl-0">
-              <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-colors duration-500">
-                <div class="flex items-start gap-5">
-                  <div class="bg-accent/50 rounded-full p-4 flex-shrink-0">
-                    <i data-lucide="wine" class="w-6 h-6 text-primary"></i>
-                  </div>
-                  <div class="flex-1">
-                    <h3 data-i18n="prog.coctel" class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">CÓCTEL</h3>
-                    <p data-i18n="prog.coctel.desc" class="text-base text-secondary/70 font-body mb-4">Aperitivos y bebidas</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="hidden md:block absolute left-1/2 w-3 h-3 bg-primary rounded-full border-2 border-white transform md:-translate-x-1/2 shadow-sm"></div>
-          </div>
-
+          
           <div class="relative flex items-center md:flex-row-reverse fade-in">
             <div class="flex-1 md:pl-16 pl-6 md:pl-0">
               <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-colors duration-500">
@@ -573,82 +886,108 @@
     </div>
   </section>
 
-  <!-- RSVP Section (existente) -->
-  <section id="rsvp" class="w-full py-16 md:py-24 bg-gradient-to-b from-background to-accent/30">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <div class="text-center mb-12 fade-in">
-        <div class="flex items-center justify-center gap-4 mb-4">
-          <span class="text-xl md:text-2xl text-primary/60">✧</span>
-          <h2 data-i18n="rsvp.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">¿Nos acompañarás?</h2>
-          <span class="text-xl md:text-2xl text-primary/60">✧</span>
-        </div>
-        <p data-i18n="rsvp.subtitle">Tu presencia es el mejor regalo</p>
-        <p data-i18n="rsvp.deadline">✧Por Favor confirmar su asistencia antes del 18 de Julio del 2026✧</p>
+  <!-- RSVP Section - VERSIÓN CORREGIDA -->
+<section id="rsvp" class="w-full py-16 md:py-24 bg-gradient-to-b from-background to-accent/30">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <div class="text-center mb-12 fade-in">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <span class="text-xl md:text-2xl text-primary/60">✧</span>
+        <h2 data-i18n="rsvp.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">¿Nos acompañarás?</h2>
+        <span class="text-xl md:text-2xl text-primary/60">✧</span>
+      </div>
+      <p data-i18n="rsvp.subtitle" class="text-lg text-muted-foreground font-body mb-2">Tu presencia es el mejor regalo</p>
+      <p data-i18n="rsvp.deadline" class="text-sm text-primary/70 font-body italic">✧ Por favor confirmar su asistencia antes del 18 de Julio del 2026 ✧</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 md:p-10 shadow-elegant fade-in">
+      
+      <!-- Botones de selección inicial -->
+      <div id="rsvp-choices" class="grid md:grid-cols-2 gap-6">
+        <button onclick="showRSVPForm(true)" class="btn-primary flex items-center justify-center gap-2 py-4 text-lg">
+          <i data-lucide="heart" class="w-5 h-5"></i><span data-i18n="rsvp.yes">Sí, asistiré</span>
+        </button>
+        <button onclick="showRSVPForm(false)" class="btn-outline py-4 text-lg">
+          <span data-i18n="rsvp.no">No podré asistir</span>
+        </button>
       </div>
 
-      <div class="bg-white rounded-xl p-8 md:p-10 shadow-elegant fade-in">
-        <div id="rsvp-choices" class="grid md:grid-cols-2 gap-6">
-          <button onclick="showRSVPForm(true)" class="btn-primary flex items-center justify-center gap-2 py-4">
-            <i data-lucide="heart" class="w-5 h-5"></i><span data-i18n="rsvp.yes">Sí, asistiré</span>
-          </button>
-          <button onclick="showRSVPForm(false)" class="btn-outline py-4">
-            <span data-i18n="rsvp.no">No podré asistir</span>
-          </button>
+      <!-- FORMULARIO SÍ ASISTIRÉ -->
+      <form id="rsvp-form-yes" class="hidden space-y-6 mt-6" onsubmit="submitRSVP(event, true)">
+        <!-- Nombre principal -->
+        <div>
+          <label class="block text-secondary font-body font-medium mb-2" data-i18n="rsvp.form.name">Tu nombre completo *</label>
+          <input type="text" name="guestName" id="guestName" required 
+                 class="w-full p-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                 data-i18n-placeholder="rsvp.form.placeholder.name" placeholder="Nombre y apellido">
+        </div>
+        
+        <!-- Número de acompañantes -->
+        <div>
+          <label class="block text-secondary font-body font-medium mb-2" data-i18n="rsvp.form.companions">¿Cuántos acompañantes traerás?</label>
+          <input type="number" name="companions" id="companions" min="0" max="10" value="0" 
+                 onchange="updateCompanions(parseInt(this.value))"
+                 class="w-full p-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50">
         </div>
 
-        <form id="rsvp-form-yes" class="hidden space-y-6 mt-6" onsubmit="submitRSVP(event, true)">
-          <div>
-            <label data-i18n="rsvp.form.name">Tu nombre completo *</label>
-            <input type="text" name="guestName" id="guestName" required class="w-full p-3 border border-border rounded-lg" data-i18n-placeholder="rsvp.form.placeholder.name" placeholder="Nombre y apellido">
+        <!-- Contenedor de acompañantes (se llena dinámicamente) -->
+        <div id="companions-container" class="space-y-4 hidden"></div>
+
+        <!-- Información del invitado principal -->
+        <div class="p-6 bg-accent/20 rounded-lg border border-border space-y-4">
+          <h4 class="text-xl font-heading text-secondary" data-i18n="rsvp.form.info">Tu información</h4>
+          
+          <div class="flex items-center justify-between">
+            <label class="text-base font-body text-secondary flex items-center gap-2">
+              <i data-lucide="wine" class="w-4 h-4 text-primary"></i>
+              <span data-i18n="rsvp.form.alcohol">¿Consumirás alcohol?</span>
+            </label>
+            <input type="checkbox" name="guestAlcohol" class="w-5 h-5 accent-primary rounded">
           </div>
           
           <div>
-            <label data-i18n="rsvp.form.companions">¿Cuántos acompañantes traerás?</label>
-            <input type="number" name="companions" id="companions" min="0" max="10" value="0" onchange="updateCompanions(this.value)" class="w-full p-3 border border-border rounded-lg">
-          </div>
-
-          <div id="companions-container" class="space-y-4 hidden"></div>
-
-          <div class="p-6 bg-accent/20 rounded-lg border border-border space-y-4">
-            <h4 data-i18n="rsvp.form.info">Tu información</h4>
-            <div class="flex items-center justify-between">
-              <label class="text-base font-body text-secondary flex items-center gap-2">
-                <span data-i18n="rsvp.form.alcohol">¿Consumirás alcohol?</span>
-              </label>
-              <input type="checkbox" name="guestAlcohol" class="w-5 h-5 accent-primary">
-            </div>
-            <div>
-              <label data-i18n="rsvp.form.allergies.label">Alergias o restricciones alimentarias</label>
-              <textarea name="guestAllergies" id="guestAllergies" rows="3" class="w-full p-3 border border-border rounded-lg" data-i18n-placeholder="rsvp.form.placeholder.allergies" placeholder="Especifica si tienes alguna alergia..."></textarea>
-            </div>
-          </div>
-
-          <div class="flex gap-4 pt-4">
-            <button type="button" onclick="resetRSVP()" class="btn-outline flex-1"><span data-i18n="common.back">Volver</span></button>
-            <button type="submit" class="btn-primary flex-1" id="submit-btn-yes"><span data-i18n="rsvp.form.send">Confirmar asistencia</span></button>
-          </div>
-        </form>
-
-        <div id="rsvp-form-no" class="hidden text-center space-y-6 mt-6">
-          <p data-i18n="rsvp.no.message1" class="text-xl text-secondary/80 font-body">Lamentamos que no puedas acompañarnos en nuestro día especial.</p>
-          <p data-i18n="rsvp.no.message2" class="text-lg text-muted-foreground font-body italic">¡Estarás en nuestros pensamientos!</p>
-          <div class="flex gap-4 pt-4">
-            <button type="button" onclick="resetRSVP()" class="btn-outline flex-1"><span data-i18n="common.back">Volver</span></button>
-            <button onclick="submitRSVP(event, false)" class="btn-primary flex-1" id="submit-btn-no"><span data-i18n="rsvp.form.send">Confirmar asistencia</span></button>
+            <label class="block text-secondary font-body font-medium mb-2" data-i18n="rsvp.form.allergies.label">Alergias o restricciones alimentarias</label>
+            <textarea name="guestAllergies" id="guestAllergies" rows="3" 
+                      class="w-full p-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
+                      data-i18n-placeholder="rsvp.form.placeholder.allergies" 
+                      placeholder="Especifica si tienes alguna alergia..."></textarea>
           </div>
         </div>
 
-        <div id="rsvp-success" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
-          <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
-          <p data-i18n="rsvp.success" class="text-green-800 font-body">¡Gracias! Tu respuesta ha sido enviada correctamente.</p>
+        <!-- Botones de acción -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <button type="button" onclick="resetRSVP()" class="btn-outline flex-1 py-3"><span data-i18n="common.back">Volver</span></button>
+          <button type="submit" class="btn-primary flex-1 py-3" id="submit-btn-yes">
+            <span data-i18n="rsvp.form.send">Confirmar asistencia</span>
+          </button>
         </div>
-        <div id="rsvp-error" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
-          <i data-lucide="alert-circle" class="w-5 h-5 text-red-600"></i>
-          <p data-i18n="rsvp.error" class="text-red-800 font-body">Hubo un error al enviar tu respuesta. Por favor, inténtalo de nuevo.</p>
+      </form>
+
+      <!-- FORMULARIO NO ASISTIRÉ -->
+      <div id="rsvp-form-no" class="hidden text-center space-y-6 mt-6">
+        <i data-lucide="heart-off" class="w-16 h-16 text-muted-foreground mx-auto"></i>
+        <p data-i18n="rsvp.no.message1" class="text-xl text-secondary/80 font-body">Lamentamos que no puedas acompañarnos en nuestro día especial.</p>
+        <p data-i18n="rsvp.no.message2" class="text-lg text-muted-foreground font-body italic">¡Estarás en nuestros pensamientos!</p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <button type="button" onclick="resetRSVP()" class="btn-outline flex-1 py-3"><span data-i18n="common.back">Volver</span></button>
+          <button onclick="submitRSVP(event, false)" class="btn-primary flex-1 py-3" id="submit-btn-no">
+            <span data-i18n="rsvp.form.send">Confirmar asistencia</span>
+          </button>
         </div>
       </div>
+
+      <!-- Mensajes de éxito/error -->
+      <div id="rsvp-success" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
+        <p data-i18n="rsvp.success" class="text-green-800 font-body">¡Gracias! Tu respuesta ha sido enviada correctamente.</p>
+      </div>
+      
+      <div id="rsvp-error" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
+        <i data-lucide="alert-circle" class="w-5 h-5 text-red-600"></i>
+        <p data-i18n="rsvp.error" class="text-red-800 font-body">Hubo un error al enviar tu respuesta. Por favor, inténtalo de nuevo.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Additional Info Section (existente) -->
   <section id="informacion" class="py-16 md:py-24 bg-background">
@@ -669,7 +1008,8 @@
           <p data-i18n="info.gallery.qr">✧Escanea el código QR para subir tus fotos y videos del día✧</p>
           <div class="flex justify-center">
             <div class="border-2 border-dashed border-border p-10 rounded-xl text-center">
-              <img src="https://i.ibb.co/fzPxTNpd/knipsmig-event-qr.png" class="w-40 mx-auto mb-4">
+            <img src="https://i.ibb.co/fzPxTNpd/knipsmig-event-qr.png" class="w-40 mx-auto mb-4" loading="lazy" decoding="async"
+            alt="Código QR para compartir fotos de la boda - KnipsMig">
             </div>
           </div>
         </div>
@@ -681,7 +1021,7 @@
           </div>
           <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.special.arrival">✧ Por Favor confirmar su asistencia antes del 18 de Julio del 2026 ✧
                
-✧ Recomendamos llegar con 20-30 minutos de antelación para encontrar estacionamiento y acomodarse ✧</p>
+✧ Recomendamos llegar con 15-20 minutos de antelación para encontrar estacionamiento y acomodarse ✧</p>
         </div>
 
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
@@ -690,7 +1030,7 @@
             <h3 data-i18n="info.hotel.title">Información del Hotel</h3>
           </div>
           <p class="text-lg text-secondary/80 font-body leading-relaxed mb-4" data-i18n="info.hotel.desc">
-            ForRest Hotel & Restaurant es un agradable, amplio y seguro lugar de eventos unicos e inolvidables, 
+            ForRest Hotel & Restaurant es un lugar unico, espacioso, rodeado de naturaleza e ideal para eventos inolvidables, 
             cuenta con Spa, Piscina, Jacuzzi, Sauna, Masajes 
             (Servicios especiales tienen cobros adicionales directo con el hotel).
           </p>
@@ -698,13 +1038,7 @@
             El hotel está a 2 minutos de nuestra Iglesia
             y cuenta con todas las comodidades necesarias.
           </p>
-          <p class="text-lg text-secondary/80 font-body leading-relaxed" data-i18n="info.hotel.contact">
-            ¿Te gustaría llegar antes o quedarte más tiempo? Avísanos y organizaremos juntos tu estancia. Tenemos precios especiales para Nuestros invitados. 💍
-                    <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap"></p>
-           Agnieszka   +48- 696 437 467   
-          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap"></p>                                 
-           Mario Alejandro    +34- 603 126 569 
-          </p>
+          
         </div>
 
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
@@ -714,8 +1048,16 @@
           </div>
           <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.hospedaje.desc">Para aquellos que vengan de fuera, hemos reservado habitaciones para usdtedes en nuestro Hotel.
 
-Invitados tienen acceso al ForRest Hotel: check in 15:00h - check out 10:00h. 
+Invitados tienen acceso al ForRest Hotel: check in 18 Septiembre 2026 - 15:00h  - check out 19 Septiembre 2026 - 10:00h 
 Si desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitacion.</p>
+
+          <p class="text-lg text-secondary/80 font-body leading-relaxed" data-i18n="info.hotel.contact">
+            ¿Te gustaría llegar antes o quedarte más tiempo? Avísanos y organizaremos juntos tu estancia. Tenemos precios especiales para Nuestros invitados. 💍
+                    <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap"></p>
+           Agnieszka   +48- 696 456 477   
+          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap"></p>                                 
+           Mario Alejandro    +34- 603 126 569 
+          </p>
         </div>
 
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
@@ -723,7 +1065,7 @@ Si desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitac
             <i data-lucide="gift" class="w-6 h-6 text-primary"></i>
             <h3 data-i18n="info.gifts.title">Lista de Regalos</h3>
           </div>
-          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.gifts.desc">Vuestra presencia es nuestro mejor regalo. Sin embargo, en lugar de los tradicionales ramos de flores, apreciaremos granos de café aromáticos que despertarán nuestras mañanas. ☕
+          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.gifts.desc">Vuestra presencia es nuestro mejor regalo. Sin embargo, en lugar de los tradicionales ramos de flores, apreciaremos una botella de vino 🍷 o un libro interesante.
 
 Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuestro apoyo, para asi iniciar nuestra vida juntos en Polonia. ❤️</p>
         </div>
@@ -762,7 +1104,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
       </div>
 
       <div class="border-t border-white/10 pt-8 mt-8">
-        <p data-i18n="footer.message">✧ Con todo nuestro amor, esperamos celebrar este día especial contigo ✧</p>
+        <p data-i18n="footer.message">✧ Con todo nuestro amor, esperamos celebrar este día especial contigo! ✧</p>
         <p class="text-sm text-white/40 mt-6 font-body">© 2026 Aga & Olek Wedding</p>
       </div>
     </div>
@@ -794,7 +1136,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "arrived": "¡El gran día ha llegado!",
         // Mensaje de la pareja
         "message.title": "Un mensaje de nuestro corazón",
-        "message.text1": "Queridos amigos y familia...",
+        "message.text1": "Querida Familia y Amigos...",
         "message.text2": "Este día es especial no solo por nosotros, sino porque ustedes son parte de nuestra historia. Cada uno de ustedes deja una huella en nuestro corazón. Gracias por acompañarnos en este viaje, por su amor, su apoyo y por hacer que este momento sea aún más significativo. Los llevamos con nosotros hoy y siempre.",
         // Nuestra historia
         "story.title": "Nuestra historia",
@@ -802,11 +1144,14 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "story.meet.title": "✨ Cómo nos conocimos ✨",
         "story.meet.text1": "Nuestro camino se cruzó cuando menos lo esperábamos. Desde aquella primera conversación, supimos que algo especial estaba naciendo. Cada momento compartido fue construyendo esta historia que hoy celebramos.",
         "story.meet.text2": "Madrid fue el lugar donde esta historia de amor comenzo, un Peruano se propuso conquistar a su Princesita Polaca ❤️... ",
-        "story.meet.text3": "Es sin dudas la mejor historia de amor que alguien puede tener en la vida. Dos personas con diferentes culturas, de diferentes continentes,hablando diferentes idiomas, sin duda Dios unio nuestros caminos para que sea un ejemplo a contar del amor puro que dos personas estan dispuesto a dar del uno al otro..",
+        "story.meet.text3": "Es sin dudas la mejor historia de amor que alguien puede tener en la vida. Dos personas con diferentes culturas, de diferentes continentes, hablando diferentes idiomas, sin duda Dios unio nuestros caminos para que sea un ejemplo a contar del amor puro que dos personas estan dispuesto a dar del uno al otro..",
         "story.proposal.title": "💍 La propuesta 💍",
         "story.proposal.text1": "Fue realmente un dia inovidable. Un 'si' que cambiaria nuestras vidas para siempre.",
-        "story.proposal.text2": "Mario Alejandro: Recuerdo que practicaba a solas las palabras que queria que escuche y ue sepa que  hablaba con el corazon.En un viaje a *Montenegro* visitamos 3 ciudades, no me sentia tan contento en proponerle matrimonio en esas dos primeras ciudades,pero la ultima ciudad *Budva* fue el mejor lugar, en la playa, con el sonido del mar, bailando como dos almas que se olvidan del mundo por que solo se necesitan del uno al otro... el corazon me latia muy rapido.. y supe que el momento de las palabras que estuve practicando tenian que salir de mi boca.. despues de unas bonitas palabras, con muchos nervios y con todo mi amor dije: ''Agnieszka Bonikowska , te gustaria casarte conmigo...'' ",
+        "story.proposal.text2": "Mario Alejandro: Recuerdo que practicaba a solas las palabras que queria que escuche y que sepa que hablaba con el corazon.En un viaje a *Montenegro* visitamos 3 ciudades, no me sentia tan contento en proponerle matrimonio en esas dos primeras ciudades,pero la ultima ciudad *Budva* fue el mejor lugar, en la playa, con el sonido del mar, bailando como dos almas que se olvidan del mundo por que solo se necesitan del uno al otro... el corazon me latia muy rapido.. y supe que el momento de las palabras que estuve practicando tenian que salir de mi boca.. despues de unas bonitas palabras, con muchos nervios y con todo mi amor dije: ''Agnieszka Bonikowska , te gustaria casarte conmigo...'' ",
         "story.proposal.text3": "El resto de la historia se cuenta sola... ❤️",
+        "story.proposal.text4": "Agnieszka: ¿Y yo? Aunque Mario intentaba disimular sus nervios valientemente, podía ver en sus ojos que algo se traía entre manos... Cuando pronunció aquellas palabras, el mundo se detuvo por un instante y en mi mente solo había una respuesta.",
+        "story.proposal.text5": "Desde ese momento, cada vez que miro mi anillo, todas esas emociones vuelven a mí. No solo veo el brillo de aquella noche en Budva, sino sobre todo nuestro futuro juntos. ",
+        "story.proposal.text6": "Me llena una alegría inmensa y esa dulce e impaciente espera por todo lo que nos queda por vivir. Sé que nuestra boda y celebrar con todos ustedes es solo el comienzo: uno de los muchos días maravillosos que aún están por venir.",
         "story.footer": "✧ Y ahora, con mucha emoción, esperamos el 18 de septiembre de 2026 ✧",
         // Galería
         "gallery.title": "Galería de recuerdos",
@@ -817,9 +1162,10 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "prog.title": "Programa del Día",
         "prog.subtitle": "Viernes 18 de septiembre 2026",
         "prog.misa": "MISA",
-        "info.misa.location": "Iglesia Św. Mikołaja w Zielonej Górze - Raculi.",
+        "prog.misa2": "15:00H",
+        "info.misa.location": "Iglesia Św. Mikołaja w Zielonej Górze - Raculi",
         "prog.recep": "RECEPCIÓN",
-        "info.recep.location": "ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia.",
+        "info.recep.location": "ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia",
         "prog.recep.desc": "Inicio de la celebración",
         "prog.coctel": "CÓCTEL",
         "prog.coctel.desc": "Aperitivos y bebidas",
@@ -857,16 +1203,16 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "info.gallery.desc": "Aunque tenemos nuestro propio fotógrafo, te animamos a que compartas tus fotos.",
         "info.gallery.qr": "✧Escanea el código QR para subir tus fotos y videos del día✧",
         "info.hotel.title": "Información del Hotel",
-        "info.hotel.desc": "ForRest Hotel & Restaurant es un agradable, amplio y seguro lugar de eventos únicos e inolvidables, cuenta con Spa, Piscina, Jacuzzi, Sauna, Masajes (Servicios especiales tienen cobros adicionales directo con el hotel).",
+        "info.hotel.desc": "ForRest Hotel & Restaurant es un lugar unico, espacioso, rodeado de naturaleza e ideal para eventos inolvidables, cuenta con Spa, Piscina, Jacuzzi, Sauna, Masajes (Servicios especiales tienen cobros adicionales directo con el hotel).",
         "info.hotel.location": "El hotel está a 2 minutos de nuestra Iglesia y cuenta con todas las comodidades necesarias.",
         "info.hotel.contact": "¿Te gustaría llegar antes o quedarte más tiempo? Avísanos y organizaremos juntos tu estancia. Tenemos precios especiales para Nuestros invitados 💍",
         "info.gifts.title": "Lista de Regalos",
-        "info.gifts.desc": "Vuestra presencia es nuestro mejor regalo. Sin embargo, en lugar de los tradicionales ramos de flores, apreciaremos granos de café aromáticos que despertarán nuestras mañanas. ☕\n\nAdemás, en lugar de regalos convencionales, estaremos muy agradecidos por vuestro apoyo, para así iniciar nuestra vida juntos en Polonia. ❤️",
+        "info.gifts.desc": "Vuestra presencia es nuestro mejor regalo. Sin embargo, en lugar de los tradicionales ramos de flores, apreciaremos una botella de vino 🍷 o un libro interesante. 📘 \n\n Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuestro apoyo, para así iniciar nuestra vida juntos en Polonia ❤️",
         "info.special.title": "Información Especial",
-        "info.special.arrival": "✧ Por Favor confirmar su asistencia antes del 18 de Julio del 2026 ✧\n\n✧ Recomendamos llegar con 20-30 minutos de antelación para encontrar estacionamiento y acomodarse ✧",
+        "info.special.arrival": "✧ Por Favor confirmar su asistencia antes del 18 de Julio del 2026 ✧\n\n✧ Recomendamos llegar con 15-20 minutos de antelación para encontrar estacionamiento y acomodarse ✧",
         "info.hospedaje.title": "Hospedaje Pre-Boda",
-        "info.hospedaje.desc": "Para aquellos que vengan de fuera, hemos reservado habitaciones para ustedes en nuestro Hotel.\n\nInvitados tienen acceso al ForRest Hotel: check in 15:00h - check out 10:00h. \n\n Si desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitación.",
-        "footer.message": "✧ Con todo nuestro amor, esperamos celebrar este día especial contigo ✧",
+        "info.hospedaje.desc": "Para aquellos que vengan de fuera, hemos reservado habitaciones para ustedes en nuestro Hotel.\n Invitados tienen acceso al ForRest Hotel:\n check in 18 Septiembre 2026 - 15:00h \n check out 19 Septiembre 2026 - 10:00h\n\nSi desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitación.",
+        "footer.message": "✧ Con todo nuestro amor, esperamos celebrar este día especial contigo! ✧",
         "common.yes": "Sí",
         "common.no": "No",
         "common.back": "Volver"
@@ -890,21 +1236,24 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "count.waiting": "Czekamy na Was z niecierpliwością i radością",
         "arrived": "Nadszedł ten wielki dzień!",
         // Mensaje de la pareja
-        "message.title": "Słowo od naszych serc",
-        "message.text1": "Drodzy przyjaciele i rodzino...",
-        "message.text2": "Ten dzień jest wyjątkowy nie tylko dla nas, ale także dlatego, że jesteście częścią naszej historii. Każdy z Was pozostawił ślad w naszych sercach. Dziękujemy, że towarzyszycie nam w tej podróży, za Waszą miłość, wsparcie i za to, że ten moment jest jeszcze bardziej znaczący. Nosimy Was w naszych sercach dziś i zawsze.",
+        "message.title": "Wiadomość prosto z serca",
+        "message.text1": "Drodzy Rodzice, Rodzino i Przyjaciele...",
+        "message.text2": "Ten dzień jest wyjątkowy nie tylko ze względu na nas, ale także dlatego, że to Wy - nasze rodziny i przyjaciele - jesteście częścią naszej historii. Każdy z Was zostawił trwały ślad w naszych sercach. Dziękujemy, że towarzyszycie nam w tej podróży, za Wasze wsparcie i za to, że czynicie tę chwilę jeszcze piękniejszą.",
         // Nuestra historia
         "story.title": "Nasza historia",
         "story.subtitle": "Jak to się wszystko zaczęło...",
         "story.meet.title": "✨ Jak się poznaliśmy ✨",
-        "story.meet.text1": "Nasze drogi skrzyżowały się, gdy najmniej się tego spodziewaliśmy. Od pierwszej rozmowy wiedzieliśmy, że rodzi się coś wyjątkowego. Każda wspólnie spędzona chwila budowała tę historię, którą dziś świętujemy.",
-        "story.meet.text2": "Madryt był miejscem, w którym rozpoczęła się ta historia miłości; pewien Peruwiańczyk postanowił zdobyć serce swojej polskiej księżniczki ❤️...",
-        "story.meet.text3": "To bez wątpienia najpiękniejsza historia miłosna, jaką można przeżyć w życiu. Dwoje ludzi z różnych kultur, z różnych kontynentów, mówiących różnymi językami – bez wątpienia Bóg złączył nasze drogi, aby stały się one świadectwem czystej miłości, którą dwoje ludzi jest gotowych sobie nawzajem ofiarować. ",
+        "story.meet.text1": "Nasze drogi skrzyżowały się w najmniej oczekiwanym momencie. Już od pierwszej rozmowy czuliśmy, że rodzi się między nami coś wyjątkowego. Każda wspólna chwila była cegiełką budującą historię, którą dziś z radością świętujemy.",
+        "story.meet.text2": "Wszystko zaczęło się w Madrycie – to właśnie tam pewien Peruwiańczyk postanowił zdobyć serce swojej polskiej Księżniczki ❤️....",
+        "story.meet.text3": "To bez wątpienia najpiękniejszy scenariusz, jaki napisało dla nas życie. Dwa światy, dwa kontynenty i dwa różne języki połączyły się w jeden. Wierzymy, że to przeznaczenie postawiło nas na swojej drodze, by pokazać, że miłość nie zna granic i jest gotowa na wszystko.",
         "story.proposal.title": "💍 Oświadczyny 💍",
-        "story.proposal.text1": "To był doprawdy niezapomniany dzień. Słowo „tak”, które na zawsze odmieniło nasze życie.",
-        "story.proposal.text2": "Pamiętam, jak ćwiczyłem w samotności słowa, które chciałem, aby usłyszała; słowa, o których wiedziałem, że płyną prosto z serca. Podczas podróży do Czarnogóry odwiedziliśmy trzy miasta. Nie czułem się w pełni gotowy, by oświadczyć się w dwóch pierwszych, lecz ostatnie z nich – Budva – okazało się miejscem idealnym. Na plaży, przy szumie fal, tańczyliśmy jak dwie dusze, które zapominają o całym świecie, bo potrzebują tylko siebie nawzajem...Serce biło mi niezwykle mocno i poczułem, że nadeszła chwila, by wypowiedzieć te wyćwiczone słowa. Po kilku pięknych zdaniach, przepełniony tremą, lecz z całą moją miłością, zapytałem: „Agnieszko Bonikowska, czy wyjdziesz za mnie?”. ",
-        "story.proposal.text3": "Reszta tej historii pisze się już sama... ❤️",
-        "story.footer": "✧ A teraz z wielką emocją czekamy na 18 września 2026 roku ✧",
+        "story.proposal.text1": "To był naprawdę niezapomniany dzień – jedno „tak”, które na zawsze odmieniło nasze życie.",
+        "story.proposal.text2": "Mario Alejandro: Pamiętam, jak w myślach powtarzałem każde słowo, które chciałem jej powiedzieć. Pragnąłem, by poczuła, że płyną one prosto z serca. Podczas naszej podróży do Czarnogóry odwiedziliśmy trzy miasta. W dwóch pierwszych czułem, że to jeszcze nie ten moment... ale ostatnie z nich, Budva, okazało się miejscem idealnym.Byliśmy na plaży, otoczeni kojącym szumem fal. Tańczyliśmy wtuleni w siebie, jak dwie dusze, które do szczęścia potrzebowały odnaleźć siebie nawzajem. Serce biło mi jak oszalałe. Wiedziałem, że to właśnie ta chwila. Odłożyłem na bok wyćwiczone zdania i po prostu pozwoliłem mówić emocjom. Pełen drżenia, ale i bezgranicznej miłości, zapytałem: „Agnieszka Bonikowska, czy zechcesz wyjść za mnie?”. ",
+        "story.proposal.text3": "Dalsza część tej historii pisze się już każdego dnia w naszych sercach... ❤️ ",
+        "story.proposal.text4": "Agnieszka: A ja? Choć Mario dzielnie skrywał swoje zdenerwowanie, w jego oczach widziałam, że „coś się święci”... Kiedy padły te słowa, świat na moment się zatrzymał, a w głowie miałam tylko jedną odpowiedź.",
+        "story.proposal.text5": "Od tamtej chwili, za każdym razem, gdy patrzę na mój pierścionek, wracają te wszystkie emocje. Widzę w nim nie tylko blask tamtego wieczoru w Budvie, ale przede wszystkim naszą wspólną przyszłość.",
+        "story.proposal.text6": "Przepełnia mnie ogromna radość i to słodkie, niecierpliwe oczekiwanie na wszystko, co razem przeżyjemy. Wiem, że nasz ślub i wspólne świętowanie z Wami to dopiero początek – jeden z wielu najpiękniejszych dni, które są jeszcze przed nami.",
+        "story.footer": "✧ A teraz z wielką radością czekamy na 18 września 2026 roku ✧",
         // Galería
         "gallery.title": "Galeria wspomnień",
         "gallery.subtitle": "Chwile, które na zawsze pozostaną w naszych sercach",
@@ -914,7 +1263,8 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "prog.title": "Plan Uroczystości",
         "prog.subtitle": "Piątek, 18 września 2026 r.",
         "prog.misa": "MSZA ŚWIĘTA",
-        "info.misa.location": "kościół Św. Mikołaja w Zielonej Górze - Raculi.",
+        "prog.misa2": "15:00",
+        "info.misa.location": "kościół Św. Mikołaja w Zielonej Górze - Raculi",
         "prog.recep": "PRZYJĘCIE WESELNE",
         "info.recep.location": "ForRest Hotel & Restaurant, adres: ul. Głogowska 4, 66-004 Zielona Góra, Polska",
         "prog.recep.desc": "Rozpoczęcie świętowania",
@@ -955,16 +1305,16 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "info.gallery.desc": "Chociaż mamy własnego fotografa, zachęcamy do dzielenia się swoimi zdjęciami.",
         "info.gallery.qr": "✧ Zeskanuj kod QR, aby dodać zdjęcia ✧",
         "info.hotel.title": "Informacje o hotelu",
-        "info.hotel.desc": "ForRest Hotel & Restaurant to przyjemne, przestronne i bezpieczne miejsce na wyjątkowe i niezapomniane wydarzenia. Oferuje spa, basen, jacuzzi, saunę oraz masaże (usługi dodatkowe płatne bezpośrednio w hotelu).",
+        "info.hotel.desc": "ForRest Hotel & Restaurant to wyjątkowe, przestronne miejsce w sercu natury, w którym każde wydarzenie staje się niezapomnianym przeżyciem. Oferuje spa, basen, jacuzzi, saunę oraz masaże (usługi dodatkowe płatne bezpośrednio w hotelu).",
         "info.hotel.location": "Hotel znajduje się 2 minuty od naszego kościoła i zapewnia wszelkie niezbędne udogodnienia.",
         "info.hotel.contact": "Chcesz przyjechać wcześniej lub zostać dłużej? Daj nam znać – pomożemy zorganizować Twój pobyt. Mamy specjalne ceny dla naszych gości 💍",
         "info.special.title": "Ważne informacje",
-        "info.special.arrival": "✧ Prosimy o potwierdzenie przybycia do dnia 18 lipca 2026 r. ✧\n\n✧ Zalecamy przybycie 20–30 minut wcześniej, aby znaleźć miejsce parkingowe i spokojnie się przygotować ✧",
+        "info.special.arrival": "✧ Prosimy o potwierdzenie przybycia do dnia 18 lipca 2026 r. ✧\n\n✧ Zalecamy przybycie 15–20 minut wcześniej, aby znaleźć miejsce parkingowe i spokojnie się przygotować ✧",
         "info.gifts.title": "Prezenty",
-        "info.gifts.desc": "Wasza obecność jest dla nas najpiękniejszym prezentem. Zamiast tradycyjnych bukietów kwiatów, docenimy aromatyczne ziarna kawy, które umilą nasze poranki. ☕\n\nPonadto, zamiast konwencjonalnych prezentów, będziemy bardzo wdzięczni za Wasze wsparcie, aby rozpocząć nasze wspólne życie w Polsce. ❤️",
+        "info.gifts.desc": "Wasza obecność jest dla nas najpiękniejszym prezentem. Będzie nam bardzo miło, jeśli zamiast tradycyjnych kwiatów zechcecie nas obdarować butelką wina 🍷 lub ciekawą książką.📘\n\nPonadto, zamiast konwencjonalnych prezentów, będziemy bardzo wdzięczni za Wasze wsparcie, aby rozpocząć nasze wspólne życie w Polsce ❤️",
         "info.hospedaje.title": "Zakwaterowanie przed ślubem",
-        "info.hospedaje.desc": "Dla gości przyjezdnych zarezerwowaliśmy pokoje w hotelu ForRest.\n\nZameldowanie od 15:00, wymeldowanie do 10:00.\n\nWcześniejsze zameldowanie: 40 zł za godzinę za pokój.",
-        "footer.message": "✧ Z całego serca czekamy, aby wspólnie świętować ten wyjątkowy dzień ✧",
+        "info.hospedaje.desc": "Dla gości przyjezdnych zarezerwowaliśmy pokoje w hotelu ForRest.\n\nZameldowanie 18 września 2026, godz. 15:00\nwymeldowanie 19 września 2026, godz. 10:00\n\nWcześniejsze zameldowanie/wymeldowanie: 40 zł za godzinę za pokój.",
+        "footer.message": "✧ Mamy nadzieję, że będziemy mogli świętować ten wyjątkowy dzień razem z Tobą! ✧",
         "common.yes": "Tak",
         "common.no": "Nie",
         "common.back": "Powrót"
@@ -972,7 +1322,9 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
     };
 
     function switchLanguage(lang) {
+  // Cambiar el atributo lang del HTML
   document.documentElement.lang = lang;
+  document.documentElement.setAttribute('lang', lang);
 
   // Actualizar botones activos (escritorio y móvil)
   const buttons = ['lang-es', 'lang-pl', 'lang-es-mobile', 'lang-pl-mobile'];
@@ -1044,40 +1396,63 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // Header Scroll Effect
+    // Header Scroll Effect - MEJORADO (con clase scrolled para idioma)
     const header = document.getElementById('header');
     const headerTexts = document.querySelectorAll('.header-text, .header-subtext, .header-link');
     const headerIcons = document.querySelectorAll('.header-icon');
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
-        header.classList.remove('bg-transparent', 'py-4');
-        header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-2');
-        headerTexts.forEach(el => { el.classList.remove('text-white'); el.classList.add('text-secondary'); });
-        headerIcons.forEach(el => { el.classList.remove('text-white'); el.classList.add('text-primary'); });
+    header.classList.remove('bg-transparent', 'py-4');
+    header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-2', 'scrolled');
+    headerTexts.forEach(el => { el.classList.remove('text-white'); el.classList.add('text-secondary'); });
+    headerIcons.forEach(el => { el.classList.remove('text-white'); el.classList.add('text-primary'); });
       } else {
-        header.classList.add('bg-transparent', 'py-4');
-        header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-2');
-        headerTexts.forEach(el => { el.classList.add('text-white'); el.classList.remove('text-secondary'); });
-        headerIcons.forEach(el => { el.classList.add('text-white'); el.classList.remove('text-primary'); });
-      }
-    });
+    header.classList.add('bg-transparent', 'py-4');
+    header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-2', 'scrolled');
+    headerTexts.forEach(el => { el.classList.add('text-white'); el.classList.remove('text-secondary'); });
+    headerIcons.forEach(el => { el.classList.add('text-white'); el.classList.remove('text-primary'); });
+    }
+  });
 
-    // Mobile Menu
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenuDiv = document.getElementById('mobile-menu');
-    mobileBtn.addEventListener('click', () => {
-      mobileMenuDiv.classList.toggle('hidden');
+// Mobile Menu - Mejorado
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenuDiv = document.getElementById('mobile-menu');
+let menuOpen = false;
+
+mobileBtn.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobileMenuDiv.classList.toggle('hidden', !menuOpen);
+  const icon = mobileBtn.querySelector('i');
+  icon.setAttribute('data-lucide', menuOpen ? 'x' : 'menu');
+  lucide.createIcons();
+});
+
+// Cerrar menú al hacer clic en cualquier enlace
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuOpen = false;
+    mobileMenuDiv.classList.add('hidden');
+    const icon = mobileBtn.querySelector('i');
+    icon.setAttribute('data-lucide', 'menu');
+    lucide.createIcons();
+  });
+});
+
+// Cerrar menú al hacer scroll (buena práctica)
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  if (menuOpen) {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      menuOpen = false;
+      mobileMenuDiv.classList.add('hidden');
       const icon = mobileBtn.querySelector('i');
-      icon.setAttribute('data-lucide', mobileMenuDiv.classList.contains('hidden') ? 'menu' : 'x');
+      icon.setAttribute('data-lucide', 'menu');
       lucide.createIcons();
-    });
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenuDiv.classList.add('hidden');
-        const icon = mobileBtn.querySelector('i');
-        icon.setAttribute('data-lucide', 'menu');
-        lucide.createIcons();
-      });
-    });
+    }, 100);
+  }
+});
 
     // Countdown Timer
     const weddingDate = new Date('2026-09-18T11:00:00').getTime();
@@ -1157,9 +1532,13 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
     }
 
     function initCarousel() {
-      slidesCarousel = Array.from(document.querySelectorAll('#carouselTrack > .carousel-slide'));
+     slidesCarousel = Array.from(document.querySelectorAll('#carouselTrack > .carousel-slide'));
       if (slidesCarousel.length === 0) return;
-      createDots();
+  
+      // Asignar fondos blur
+        setCarouselBlurBackgrounds();
+  
+       createDots();
       
       track.addEventListener('scroll', () => {
         const slideWidth = slidesCarousel[0]?.clientWidth || 0;
@@ -1189,137 +1568,280 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
       initCarousel();
     }
 
-    // ==================== RSVP FUNCTIONS ====================
-    function showRSVPForm(attending) {
-      document.getElementById('rsvp-choices').classList.add('hidden');
-      if (attending) {
-        document.getElementById('rsvp-form-yes').classList.remove('hidden');
-      } else {
-        document.getElementById('rsvp-form-no').classList.remove('hidden');
-      }
+    // Asignar la imagen de fondo BLUR a cada slide (sin cargar imágenes extra)
+    function setCarouselBlurBackgrounds() {
+    const slides = document.querySelectorAll('.carousel-slide');
+  
+    slides.forEach(slide => {
+    const img = slide.querySelector('.carousel-image');
+    const blurDiv = slide.querySelector('.carousel-blur-bg');
+    
+      if (img && blurDiv) {
+      // Usamos la misma URL de la imagen principal para el blur
+      // Esto NO carga una imagen extra, solo usa la misma URL
+      const imgSrc = img.getAttribute('src');
+      blurDiv.style.setProperty('--bg-image', `url('${imgSrc}')`);
+       }
+     });
     }
 
-    function resetRSVP() {
-      document.getElementById('rsvp-choices').classList.remove('hidden');
-      document.getElementById('rsvp-form-yes').classList.add('hidden');
-      document.getElementById('rsvp-form-no').classList.add('hidden');
-      document.getElementById('rsvp-success').classList.add('hidden');
-      document.getElementById('rsvp-error').classList.add('hidden');
-    }
+// También actualizar cuando cambie el idioma o se re-dibuje algo
+  const observerBlur = new MutationObserver(() => {
+    setCarouselBlurBackgrounds();
+  });
+    observerBlur.observe(document.getElementById('carouselTrack'), { childList: true, subtree: true });
 
-    function updateCompanions(count) {
-      const container = document.getElementById('companions-container');
-      const num = parseInt(count) || 0;
-      const lang = document.documentElement.lang || 'es';
-      
-      if (num > 0) {
-        container.classList.remove('hidden');
-        let html = `<div class="p-4 bg-accent/10 rounded-lg border border-border space-y-4"><h4 class="text-lg font-medium text-secondary font-heading mb-4">${translations[lang]['rsvp.companions.title']}</h4>`;
-        for (let i = 0; i < num; i++) {
-          html += `
-            <div class="p-4 bg-white rounded-lg space-y-3 shadow-sm border border-border/50">
-              <h5 class="font-medium text-secondary font-body">${translations[lang]['rsvp.companion']} ${i + 1}</h5>
-              <div>
-                <label class="text-sm font-body text-secondary">${translations[lang]['rsvp.form.name']}</label>
-                <input type="text" name="companion_${i}_name" required class="w-full p-2 border border-border rounded-lg mt-1" placeholder="${translations[lang]['rsvp.form.placeholder.name']}">
-              </div>
-              <div class="flex items-center justify-between mt-2">
-                <label class="text-sm font-body text-secondary flex items-center gap-2">
-                  <i data-lucide="wine" class="w-4 h-4 text-primary"></i> ${translations[lang]['rsvp.form.alcohol']}
-                </label>
-                <input type="checkbox" name="companion_${i}_alcohol" class="w-4 h-4 accent-primary">
-              </div>
-              <div>
-                <label class="text-sm font-body text-secondary">${translations[lang]['rsvp.form.allergies.label']}</label>
-                <select name="companion_${i}_allergy_check" onchange="toggleAllergyInput(this,'allergy_${i}')" class="w-full p-2 border border-border rounded-lg mt-1">
-                  <option value="no">${translations[lang]['common.no']}</option>
-                  <option value="yes">${translations[lang]['common.yes']}</option>
-                </select>
-              </div>
-              <div id="allergy_${i}" class="hidden">
-                <label class="text-sm font-body text-secondary">${translations[lang]['rsvp.form.allergies.detail']}</label>
-                <textarea name="companion_${i}_allergy_detail" rows="2" class="w-full p-2 border border-border rounded-lg mt-1" placeholder="${translations[lang]['rsvp.form.placeholder.allergies']}"></textarea>
-              </div>
-            </div>`;
-        }
-        html += '</div>';
-        container.innerHTML = html;
-        lucide.createIcons();
-      } else {
-        container.classList.add('hidden');
-        container.innerHTML = '';
-      }
-    }
 
-    function toggleAllergyInput(select, id) {
-      const box = document.getElementById(id);
-      if (select.value === "yes") {
-        box.classList.remove("hidden");
-      } else {
-        box.classList.add("hidden");
-      }
-    }
+   // ==================== RSVP FUNCTIONS - VERSIÓN CORREGIDA ====================
 
-    async function submitRSVP(e, attending) {
-      e.preventDefault();
-      const btnId = attending ? 'submit-btn-yes' : 'submit-btn-no';
-      const btn = document.getElementById(btnId);
-      const originalText = btn.innerText;
-      const lang = document.documentElement.lang || 'es';
-      
-      btn.disabled = true;
-      btn.innerText = translations[lang]['rsvp.form.sending'];
-      
-      try {
-        let data = { attending };
-        
-        if (attending) {
-          const form = e.target;
-          const formData = new FormData(form);
-          data.guestName = formData.get('guestName');
-          data.numberOfCompanions = formData.get('companions');
-          data.guestAlcohol = formData.get('guestAlcohol') === 'on';
-          data.guestAllergies = formData.get('guestAllergies');
+  let currentCompanionsCount = 0;
+
+  function showRSVPForm(attending) {
+  document.getElementById('rsvp-choices').classList.add('hidden');
+  if (attending) {
+    document.getElementById('rsvp-form-yes').classList.remove('hidden');
+    document.getElementById('rsvp-form-no').classList.add('hidden');
+  } else {
+    document.getElementById('rsvp-form-yes').classList.add('hidden');
+    document.getElementById('rsvp-form-no').classList.remove('hidden');
+  }
+  // Ocultar mensajes previos
+  document.getElementById('rsvp-success').classList.add('hidden');
+  document.getElementById('rsvp-error').classList.add('hidden');
+}
+
+function resetRSVP() {
+  document.getElementById('rsvp-choices').classList.remove('hidden');
+  document.getElementById('rsvp-form-yes').classList.add('hidden');
+  document.getElementById('rsvp-form-no').classList.add('hidden');
+  document.getElementById('rsvp-success').classList.add('hidden');
+  document.getElementById('rsvp-error').classList.add('hidden');
+  
+  // Limpiar formulario de "Sí"
+  const yesForm = document.getElementById('rsvp-form-yes');
+  if (yesForm) {
+    yesForm.reset();
+  }
+  
+  // Limpiar acompañantes
+  currentCompanionsCount = 0;
+  const companionsContainer = document.getElementById('companions-container');
+  if (companionsContainer) {
+    companionsContainer.classList.add('hidden');
+    companionsContainer.innerHTML = '';
+  }
+  
+  // Resetear el input de número de acompañantes
+  const companionsInput = document.getElementById('companions');
+  if (companionsInput) {
+    companionsInput.value = '0';
+  }
+  
+  lucide.createIcons();
+}
+
+function updateCompanions(count) {
+  const container = document.getElementById('companions-container');
+  const num = parseInt(count) || 0;
+  currentCompanionsCount = num;
+  const lang = document.documentElement.lang || 'es';
+  
+  if (num > 0) {
+    container.classList.remove('hidden');
+    let html = `
+      <div class="p-4 bg-accent/10 rounded-lg border border-border space-y-4">
+        <h4 class="text-lg font-medium text-secondary font-heading mb-4">${translations[lang]['rsvp.companions.title'] || 'Información de acompañantes'}</h4>
+    `;
+    
+    for (let i = 0; i < num; i++) {
+      html += `
+        <div class="p-4 bg-white rounded-lg space-y-3 shadow-sm border border-border/50" data-companion-index="${i}">
+          <h5 class="font-medium text-secondary font-body">${translations[lang]['rsvp.companion'] || 'Acompañante'} ${i + 1}</h5>
           
-          const companions = [];
-          for (let i = 0; i < data.numberOfCompanions; i++) {
-            companions.push({
-              name: formData.get(`companion_${i}_name`),
-              alcohol: formData.get(`companion_${i}_alcohol`) === 'on',
-              allergies: formData.get(`companion_${i}_allergy_detail`) || ''
-            });
-          }
-          data.companions = companions;
-        }
-        
-        const response = await fetch('https://formspree.io/f/xreawggd', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        
-        if (response.ok) {
-          document.getElementById('rsvp-form-yes').classList.add('hidden');
-          document.getElementById('rsvp-form-no').classList.add('hidden');
-          document.getElementById('rsvp-success').classList.remove('hidden');
-          if (attending) e.target.reset();
-          updateCompanions(0);
-          setTimeout(() => resetRSVP(), 5000);
-        } else {
-          throw new Error('Network response was not ok');
-        }
-      } catch (error) {
-        document.getElementById('rsvp-error').classList.remove('hidden');
-      } finally {
-        btn.innerText = originalText;
-        btn.disabled = false;
+          <div>
+            <label class="text-sm font-body text-secondary block mb-1">${translations[lang]['rsvp.form.name'] || 'Nombre completo'} *</label>
+            <input type="text" name="companion_${i}_name" required 
+                   class="w-full p-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
+                   placeholder="${translations[lang]['rsvp.form.placeholder.name'] || 'Nombre y apellido'}">
+          </div>
+          
+          <div class="flex items-center justify-between">
+            <label class="text-sm font-body text-secondary flex items-center gap-2">
+              <i data-lucide="wine" class="w-4 h-4 text-primary"></i> 
+              ${translations[lang]['rsvp.form.alcohol'] || '¿Consumirá alcohol?'}
+            </label>
+            <input type="checkbox" name="companion_${i}_alcohol" class="w-4 h-4 accent-primary rounded">
+          </div>
+          
+          <div>
+            <label class="text-sm font-body text-secondary block mb-1">${translations[lang]['rsvp.form.allergies.label'] || '¿Tiene alergias alimentarias?'}</label>
+            <select name="companion_${i}_allergy_check" onchange="toggleAllergyInput(this, 'allergy_${i}')" 
+                    class="w-full p-2 border border-border rounded-lg">
+              <option value="no">${translations[lang]['common.no'] || 'No'}</option>
+              <option value="yes">${translations[lang]['common.yes'] || 'Sí'}</option>
+            </select>
+          </div>
+          
+          <div id="allergy_${i}" class="hidden">
+            <label class="text-sm font-body text-secondary block mb-1">${translations[lang]['rsvp.form.allergies.detail'] || 'Detalle de alergias'}</label>
+            <textarea name="companion_${i}_allergy_detail" rows="2" 
+                      class="w-full p-2 border border-border rounded-lg"
+                      placeholder="${translations[lang]['rsvp.form.placeholder.allergies'] || 'Describe las alergias...'}"></textarea>
+          </div>
+        </div>
+      `;
+    }
+    html += `</div>`;
+    container.innerHTML = html;
+    lucide.createIcons();
+  } else {
+    container.classList.add('hidden');
+    container.innerHTML = '';
+  }
+}
+
+function toggleAllergyInput(select, id) {
+  const box = document.getElementById(id);
+  if (select.value === "yes") {
+    box.classList.remove("hidden");
+  } else {
+    box.classList.add("hidden");
+  }
+}
+
+async function submitRSVP(e, attending) {
+  e.preventDefault();
+  
+  const btnId = attending ? 'submit-btn-yes' : 'submit-btn-no';
+  const btn = document.getElementById(btnId);
+  const lang = document.documentElement.lang || 'es';
+  const originalText = btn.innerText;
+  
+  // Deshabilitar botón durante el envío
+  btn.disabled = true;
+  btn.innerText = translations[lang]['rsvp.form.sending'] || 'Enviando...';
+  
+  // Ocultar mensajes previos
+  document.getElementById('rsvp-success').classList.add('hidden');
+  document.getElementById('rsvp-error').classList.add('hidden');
+  
+  try {
+    let data = { 
+      attending: attending,
+      event: "Boda Agnieszka & Mario Alejandro - 18 Septiembre 2026",
+      timestamp: new Date().toISOString()
+    };
+    
+    if (attending) {
+      // Recopilar datos del formulario principal
+      const guestName = document.getElementById('guestName')?.value.trim();
+      if (!guestName) {
+        throw new Error('El nombre es obligatorio');
       }
+      
+      data.guestName = guestName;
+      data.numberOfCompanions = parseInt(document.getElementById('companions')?.value) || 0;
+      data.guestAlcohol = document.querySelector('input[name="guestAlcohol"]')?.checked || false;
+      data.guestAllergies = document.getElementById('guestAllergies')?.value || '';
+      
+      // Recopilar datos de acompañantes
+      const companions = [];
+      for (let i = 0; i < data.numberOfCompanions; i++) {
+        const nameInput = document.querySelector(`input[name="companion_${i}_name"]`);
+        const alcoholCheck = document.querySelector(`input[name="companion_${i}_alcohol"]`);
+        const allergySelect = document.querySelector(`select[name="companion_${i}_allergy_check"]`);
+        const allergyDetail = document.querySelector(`textarea[name="companion_${i}_allergy_detail"]`);
+        
+        if (nameInput && nameInput.value.trim()) {
+          companions.push({
+            name: nameInput.value.trim(),
+            alcohol: alcoholCheck?.checked || false,
+            hasAllergies: allergySelect?.value === 'yes',
+            allergyDetail: allergyDetail?.value || ''
+          });
+        }
+      }
+      data.companions = companions;
+    } else {
+      // Para los que no asisten, podemos pedir un nombre opcional
+      data.message = "No podrá asistir a la boda";
     }
     
-    // Inicializar idioma
-    document.addEventListener('DOMContentLoaded', () => {
-      switchLanguage('es');
+    // Enviar a Formspree
+    const response = await fetch('https://formspree.io/f/xreawggd', {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
     });
+    
+    if (response.ok) {
+      // Mostrar éxito
+      document.getElementById('rsvp-success').classList.remove('hidden');
+      
+      // Limpiar y resetear después de éxito
+      if (attending) {
+        const form = document.getElementById('rsvp-form-yes');
+        if (form) form.reset();
+        updateCompanions(0);
+        const companionsInput = document.getElementById('companions');
+        if (companionsInput) companionsInput.value = '0';
+      }
+      
+      // Ocultar formularios y mostrar éxito por 5 segundos, luego volver a inicio
+      setTimeout(() => {
+        resetRSVP();
+        // Scroll suave al header
+        document.getElementById('inicio')?.scrollIntoView({ behavior: 'smooth' });
+      }, 4000);
+      
+    } else {
+      const errorData = await response.json();
+      console.error('Error response:', errorData);
+      throw new Error('Error en el servidor');
+    }
+    
+  } catch (error) {
+    console.error('RSVP Error:', error);
+    document.getElementById('rsvp-error').classList.remove('hidden');
+  } finally {
+    // Rehabilitar botón
+    btn.disabled = false;
+    btn.innerText = originalText;
+  }
+}
+
+// Detectar sección activa para accesibilidad (opcional)
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.header-link, .mobile-link');
+
+function updateActiveSection() {
+  const scrollPosition = window.scrollY + 150;
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionBottom = sectionTop + section.offsetHeight;
+    
+    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      const currentId = section.getAttribute('id');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${currentId}`) {
+          link.setAttribute('aria-current', 'page');
+          link.classList.add('text-primary', 'font-semibold');
+        } else {
+          link.removeAttribute('aria-current');
+          link.classList.remove('text-primary', 'font-semibold');
+        }
+      });
+    }
+  });
+}
+
+// Llamar al hacer scroll
+window.addEventListener('scroll', updateActiveSection);
   </script>
 </body>
 </html>
