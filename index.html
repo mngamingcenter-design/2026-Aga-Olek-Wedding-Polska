@@ -197,10 +197,7 @@
       background: hsl(33, 24%, 44%);
       width: 1.5rem;
     }
-    /* Control de posición para imagen móvil */
-    .hero-image-mobile {
-      object-position: center 50% 50%;
-    }  
+    
     .carousel-slide img {
       width: auto;
       max-width: 85%;
@@ -275,6 +272,14 @@
       }
     }
 
+     .carousel-dot {
+       width: 10px;
+       height: 10px;
+      }
+      .carousel-dot.active {
+      width: 28px;
+    }
+
         /* Mejoras de contraste para accesibilidad */
     
     /* Asegurar contraste mínimo en textos sobre fondo blanco */
@@ -314,13 +319,11 @@
     .carousel-slide .carousel-blur-bg {
       position: absolute;
       inset: 0;
-      background-image: var(--bg-image);
       background-size: cover;
       background-position: center;
-      filter: blur(10px);
-      transform: scale(1.1);
+      filter: blur(8px);
+      transform: scale(1.05);
       opacity: 0.85;
-      transition: filter 0.3s ease;
     }
     
     /* Superposición cálida (opcional - da calidez al blur) */
@@ -393,12 +396,35 @@
       width: 24px;
       border-radius: 4px;
     }
+
+      /* Efecto táctil para móvil en tarjetas de itinerario */
+    .bg-white.rounded-xl {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .bg-white.rounded-xl:active {
+      transform: scale(0.98);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+      /* Solo en móvil, subir la imagen de portada */
+      @media (max-width: 767px) {
+    picture.hero-img {
+      object-fit: cover;
+      object-position: center 100% !important;
+      }
+    }
+    
+    header.scrolled .header-subtext { color: #2c2c2c !important; 
+    }
+
   </style>
 </head>
 <body class="antialiased">
   
   <!-- Skip to content link para lectores de pantalla -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:p-3 focus:rounded-lg">
+  <a href="#inicio" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:p-3 focus:rounded-lg">
     Saltar al contenido principal</a>
 
   <!-- Header - Versión COMPLETA (Web + Móvil) -->
@@ -411,7 +437,7 @@
         <i data-lucide="heart" class="w-5 h-5 md:w-6 md:h-6 text-white header-icon transition-colors duration-300"></i>
         <div>
           <h1 class="text-lg md:text-xl font-bold font-heading text-white header-text transition-colors duration-300">Aga & Olek</h1>
-          <p class="text-xs md:text-sm font-body text-white/90 header-subtext transition-colors duration-300 hidden sm:block">#Aga&Olek2026❤️</p>
+          <p class="text-xs md:text-sm font-body text-white/90 header-subtext transition-colors duration-300 block mt-1">#Aga&Olek2026❤️</p>
         </div>
       </div>
 
@@ -465,9 +491,9 @@
     <picture>
       <source media="(min-width: 768px)" srcset="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg">
       <source media="(max-width: 767px)" srcset="https://i.ibb.co/r2BVK7yJ/IMGnew.png">
-      <img src="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg" 
+      <img src="https://i.ibb.co/r2BVK7yJ/IMGnew.png" 
            alt="Agnieszka & Mario Alejandro - Nuestra historia de amor"
-           class="w-full h-full object-cover"
+           class="w-full h-full object-cover hero-img"
            fetchpriority="high"
            decoding="async">
     </picture>
@@ -477,9 +503,9 @@
   </div>
 
   <div class="relative z-10 text-center px-5 sm:px-8 max-w-4xl mx-auto fade-in" style="padding-top: 15rem;">
-    <div class="mb-8">
+    <div class="mb-4">
       <div class="mb-6 md:mb-10">
-        <span class="text-4xl md:text-6xl text-primary/80">✧</span>
+        <span class="text-4xl md:text-6xl text-primary/80"></span>
       </div>
       
       <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-wide leading-tight drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]">
@@ -649,8 +675,8 @@
         <div class="carousel-slide relative">
           <div class="carousel-blur-bg"></div>
           <div class="carousel-overlay"></div>
-          <div class="relative z-10 flex items-center justify-center" style="min-height: 500px;">
-            <img src="https://i.ibb.co/SwM9F7s0/IMG-7166.jpg" 
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/W49XdCcP/IMG-7166.jpg" 
                  class="carousel-image w-full h-auto max-h-[70vh] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
                  loading="lazy" 
                  decoding="async"
@@ -675,7 +701,7 @@
         <div class="carousel-slide relative">
           <div class="carousel-blur-bg"></div>
           <div class="carousel-overlay"></div>
-          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+          <div class="relative z-10 flex items-center justify-center" style="min-height: 500px;">
             <img src="https://i.ibb.co/CKC1DhH9/7So-YV.jpg" 
                  class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
                  loading="lazy" 
@@ -689,8 +715,8 @@
           <div class="carousel-blur-bg"></div>
           <div class="carousel-overlay"></div>
           <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
-            <img src="https://i.ibb.co/d04VkN7X/IMG-0570.jpg" 
-                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+            <img src="https://i.ibb.co/G3MX4DGk/IMG-5789.jpg" 
+                 class="carousel-image w-full h-auto max-h-[70vh] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
                  loading="lazy" 
                  decoding="async"
                  alt="Celebrando nuestro amor">
@@ -741,7 +767,7 @@
           <div class="carousel-blur-bg"></div>
           <div class="carousel-overlay"></div>
           <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
-            <img src="https://i.ibb.co/R4VqXsdS/IMG-0855.avif" 
+            <img src="https://i.ibb.co/4ZhNbKLQ/IMG-0855-M.jpg" 
                  class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
                  loading="lazy" 
                  decoding="async"
@@ -754,11 +780,50 @@
           <div class="carousel-blur-bg"></div>
           <div class="carousel-overlay"></div>
           <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
-            <img src="https://i.ibb.co/R4VqXsdS/IMG-0855.avif" 
+            <img src="https://i.ibb.co/mVHPwztc/TWRQ2616.jpg" 
                  class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
                  loading="lazy" 
                  decoding="async"
-                 alt="Nuestra historia de amor">
+                 alt="Playa y arena">
+          </div>
+        </div>
+
+        <!-- Slide 10 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/spZVpfqf/IMG-B.jpg" 
+                 class="carousel-image w-full h-auto max-h-[70vh] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Disneyland y Amor">
+          </div>
+        </div>
+
+        <!-- Slide 11 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/DfDb78nY/Lbb-YV.jpg" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Navidad con Snowman">
+          </div>
+        </div>
+
+        <!-- Slide 12 -->
+        <div class="carousel-slide relative">
+          <div class="carousel-blur-bg"></div>
+          <div class="carousel-overlay"></div>
+          <div class="relative z-10 flex items-center justify-center p-4 md:p-8" style="min-height: 500px;">
+            <img src="https://i.ibb.co/3YscmzZf/IMG-2026.jpg" 
+                 class="carousel-image w-full h-auto max-h-[450px] md:max-h-[500px] object-contain rounded-lg shadow-lg" 
+                 loading="lazy" 
+                 decoding="async"
+                 alt="Año nuevo 2026 juntos!">
           </div>
         </div>
       </div>
@@ -772,7 +837,7 @@
       </button>
       
       <!-- Dots -->
-      <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20" id="carouselDots"></div>
+      <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20" id="carouselDots"></div>
     </div>
     
     <p data-i18n="gallery.footer" class="text-center text-sm text-muted-foreground mt-6 font-body italic">✧ Desliza para ver más momentos especiales ✧</p>
@@ -797,7 +862,7 @@
         <div class="space-y-12 md:space-y-16">
           <div class="relative flex items-center md:flex-row fade-in">
             <div class="flex-1 md:pr-16 px-4 md:pl-0">
-              <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-colors duration-500">
+              <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-all duration-500 hover:scale-[1.06]">
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-5 text-center md:text-left">
                   <div class="bg-accent/50 rounded-full p-4 flex-shrink-0 mx-auto md:mx-0">
                     <i data-lucide="church" class="w-6 h-6 text-primary"></i>
@@ -824,7 +889,7 @@
 
           <div class="relative flex items-center md:flex-row-reverse fade-in">
             <div class="flex-1 md:pl-16 px-4 md:pl-0">
-              <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-colors duration-500">
+              <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-all duration-500 hover:scale-[1.06]">
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-5 text-center md:text-left">
                   <div class="bg-accent/50 rounded-full p-4 flex-shrink-0 mx-auto md:mx-0">
                     <i data-lucide="sparkles" class="w-6 h-6 text-primary"></i>
@@ -836,6 +901,15 @@
                       <i data-lucide="map-pin" class="w-4 h-4"></i>
                       <span class="font-body" data-i18n="info.recep.location">ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia</span>
                     </div>
+                    
+                    <div class="mt-6 text-center mb-4">
+                  <a href="https://for-rest.pl/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-primary/30 bg-white/50 backdrop-blur-sm text-secondary font-body hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group">
+                <i data-lucide="building-2" class="w-4 h-4 group-hover:rotate-3 transition-transform"></i>
+              <span data-i18n="prog.hotel.website">Visitar sitio web del hotel</span>
+                <i data-lucide="external-link" class="w-3 h-3 opacity-70 group-hover:translate-x-0.5 transition-transform"></i>
+                  </a>
+                    </div>
+
                     <button type="button" onclick="toggleMap('map-recepcion')" data-i18n="prog.map.recep" class="btn-primary flex items-center justify-center gap-2 px-6 py-3 w-full md:w-auto mx-auto">
                       Ver mapa de la recepción
                     </button>
@@ -851,7 +925,7 @@
           
           <div class="relative flex items-center md:flex-row-reverse fade-in">
             <div class="flex-1 md:pl-16 pl-6 md:pl-0">
-              <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-colors duration-500">
+              <div class="bg-white rounded-xl p-8 shadow-elegant border border-border hover:border-primary/30 transition-all duration-500 hover:scale-[1.06]">
                 <div class="flex items-start gap-5">
                   <div class="bg-accent/50 rounded-full p-4 flex-shrink-0">
                     <i data-lucide="music" class="w-6 h-6 text-primary"></i>
@@ -872,7 +946,7 @@
         <div class="flex items-start gap-5">
           <i data-lucide="shirt" class="w-6 h-6 md:w-8 md:h-8 text-primary flex-shrink-0 mt-1"></i>
           <div>
-            <h3 data-i18n="dress.title" class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-4">Código de Vestimenta</h3>
+            <h3 data-i18n="dress.title" class="text-2xl md:text-3xl font-medium text-secondary font-medium mb-4">Código de Vestimenta</h3>
             <p class="text-base md:text-lg text-secondary/80 font-body leading-relaxed">
               <span data-i18n="dress.desc" class="font-medium">Formal, Elegante</span><br />
               <span data-i18n="dress.sub">Vestido y Traje</span>
@@ -934,7 +1008,7 @@
 
         <!-- Información del invitado principal -->
         <div class="p-6 bg-accent/20 rounded-lg border border-border space-y-4">
-          <h4 class="text-xl font-heading text-secondary" data-i18n="rsvp.form.info">Tu información</h4>
+          <h4 class="text-xl font-heading text-secondary" data-i18n="rsvp.companions.title">"Información de acompañantes"</h4>
           
           <div class="flex items-center justify-between">
             <label class="text-base font-body text-secondary flex items-center gap-2">
@@ -1048,7 +1122,7 @@
           </div>
           <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.hospedaje.desc">Para aquellos que vengan de fuera, hemos reservado habitaciones para usdtedes en nuestro Hotel.
 
-Invitados tienen acceso al ForRest Hotel: check in 18 Septiembre 2026 - 15:00h  - check out 19 Septiembre 2026 - 10:00h 
+Invitados tienen acceso al ForRest Hotel: check in 18 Septiembre 2026 - 15:00h  - check out 19 Septiembre 2026 - 11:00h 
 Si desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitacion.</p>
 
           <p class="text-lg text-secondary/80 font-body leading-relaxed" data-i18n="info.hotel.contact">
@@ -1105,7 +1179,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
 
       <div class="border-t border-white/10 pt-8 mt-8">
         <p data-i18n="footer.message">✧ Con todo nuestro amor, esperamos celebrar este día especial contigo! ✧</p>
-        <p class="text-sm text-white/40 mt-6 font-body">© 2026 Aga & Olek Wedding</p>
+        <p class="text-sm text-white/40 mt-6 font-body">© <span id="currentYear"></span> Aga & Olek Wedding</p>
       </div>
     </div>
   </footer>
@@ -1147,7 +1221,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "story.meet.text3": "Es sin dudas la mejor historia de amor que alguien puede tener en la vida. Dos personas con diferentes culturas, de diferentes continentes, hablando diferentes idiomas, sin duda Dios unio nuestros caminos para que sea un ejemplo a contar del amor puro que dos personas estan dispuesto a dar del uno al otro..",
         "story.proposal.title": "💍 La propuesta 💍",
         "story.proposal.text1": "Fue realmente un dia inovidable. Un 'si' que cambiaria nuestras vidas para siempre.",
-        "story.proposal.text2": "Mario Alejandro: Recuerdo que practicaba a solas las palabras que queria que escuche y que sepa que hablaba con el corazon.En un viaje a *Montenegro* visitamos 3 ciudades, no me sentia tan contento en proponerle matrimonio en esas dos primeras ciudades,pero la ultima ciudad *Budva* fue el mejor lugar, en la playa, con el sonido del mar, bailando como dos almas que se olvidan del mundo por que solo se necesitan del uno al otro... el corazon me latia muy rapido.. y supe que el momento de las palabras que estuve practicando tenian que salir de mi boca.. despues de unas bonitas palabras, con muchos nervios y con todo mi amor dije: ''Agnieszka Bonikowska , te gustaria casarte conmigo...'' ",
+        "story.proposal.text2": "Mario Alejandro: Recuerdo que practicaba a solas las palabras que queria que escuche y que sepa que hablaba con el corazon. En un viaje a *Montenegro* visitamos 3 ciudades, no me sentia tan contento en proponerle matrimonio en esas dos primeras ciudades,pero la ultima ciudad *Budva* fue el mejor lugar, en la playa, con el sonido del mar, bailando como dos almas que se olvidan del mundo por que solo se necesitan del uno al otro... el corazon me latia muy rapido.. y supe que el momento de las palabras que estuve practicando tenian que salir de mi boca.. despues de unas bonitas palabras, con muchos nervios y con todo mi amor dije: ''Agnieszka Bonikowska , te gustaria casarte conmigo...'' ",
         "story.proposal.text3": "El resto de la historia se cuenta sola... ❤️",
         "story.proposal.text4": "Agnieszka: ¿Y yo? Aunque Mario intentaba disimular sus nervios valientemente, podía ver en sus ojos que algo se traía entre manos... Cuando pronunció aquellas palabras, el mundo se detuvo por un instante y en mi mente solo había una respuesta.",
         "story.proposal.text5": "Desde ese momento, cada vez que miro mi anillo, todas esas emociones vuelven a mí. No solo veo el brillo de aquella noche en Budva, sino sobre todo nuestro futuro juntos. ",
@@ -1167,6 +1241,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "prog.recep": "RECEPCIÓN",
         "info.recep.location": "ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia",
         "prog.recep.desc": "Inicio de la celebración",
+        "prog.hotel.website": "Visitar sitio web del Hotel",
         "prog.coctel": "CÓCTEL",
         "prog.coctel.desc": "Aperitivos y bebidas",
         "prog.cena": "CENA Y FIESTA",
@@ -1268,6 +1343,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "prog.recep": "PRZYJĘCIE WESELNE",
         "info.recep.location": "ForRest Hotel & Restaurant, adres: ul. Głogowska 4, 66-004 Zielona Góra, Polska",
         "prog.recep.desc": "Rozpoczęcie świętowania",
+        "prog.hotel.website": "Odwiedź stronę Hotelu",
         "prog.coctel": "Toast powitalny",
         "prog.coctel.desc": "Przekąski i napoje",
         "prog.cena": "KOLACJA I ZABAWA",
@@ -1318,69 +1394,94 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
         "common.yes": "Tak",
         "common.no": "Nie",
         "common.back": "Powrót"
+        }
+      };
+
+      function switchLanguage(lang) {
+      // Cambiar el atributo lang del HTML
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('lang', lang);
+
+      // Actualizar botones activos (escritorio y móvil)
+      const buttons = ['lang-es', 'lang-pl', 'lang-es-mobile', 'lang-pl-mobile'];
+      buttons.forEach(id => {
+      const btn = document.getElementById(id);
+        if (btn) btn.classList.toggle('active', id.includes(lang));
+      });
+
+      // Traducir textos estáticos
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
       }
-    };
+    });
 
-    function switchLanguage(lang) {
-  // Cambiar el atributo lang del HTML
-  document.documentElement.lang = lang;
-  document.documentElement.setAttribute('lang', lang);
+      // Traducir placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+        el.placeholder = translations[lang][key];
+      }
+    });
 
-  // Actualizar botones activos (escritorio y móvil)
-  const buttons = ['lang-es', 'lang-pl', 'lang-es-mobile', 'lang-pl-mobile'];
-  buttons.forEach(id => {
-    const btn = document.getElementById(id);
-    if (btn) btn.classList.toggle('active', id.includes(lang));
-  });
-
-  // Traducir textos estáticos
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
-
-  // Traducir placeholders
-  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-    const key = el.getAttribute('data-i18n-placeholder');
-    if (translations[lang] && translations[lang][key]) {
-      el.placeholder = translations[lang][key];
-    }
-  });
-
-  // 🔥 NUEVO: Cerrar el menú móvil automáticamente después de cambiar idioma
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileBtnIcon = document.querySelector('#mobile-menu-btn i');
+      // 🔥 NUEVO: Cerrar el menú móvil automáticamente después de cambiar idioma
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileBtnIcon = document.querySelector('#mobile-menu-btn i');
   
-  if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-    mobileMenu.classList.add('hidden');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
     
-    // Cambiar el ícono de vuelta a "menu" (hamburguesa)
-    if (mobileBtnIcon) {
+        // Cambiar el ícono de vuelta a "menu" (hamburguesa)
+        if (mobileBtnIcon) {
       mobileBtnIcon.setAttribute('data-lucide', 'menu');
       lucide.createIcons(); // Refrescar el ícono
-    }
-  }
-
-  // Forzar actualización del cronómetro
-  updateCountdown();
-}
-    
-    function toggleMap(mapId) {
-      const mapContainer = document.getElementById(mapId);
-      const button = mapContainer.previousElementSibling;
-      const lang = document.documentElement.lang || 'es';
-      const defaultKey = (mapId === 'map-iglesia') ? 'prog.map.church' : 'prog.map.recep';
-      
-      if (mapContainer.classList.contains('hidden')) {
-        mapContainer.classList.remove('hidden');
-        button.innerHTML = `<i data-lucide="map-pin" class="w-5 h-5"></i> ${translations[lang]['prog.map.hide']}`;
-      } else {
-        mapContainer.classList.add('hidden');
-        button.innerHTML = `<i data-lucide="map-pin" class="w-5 h-5"></i> ${translations[lang][defaultKey]}`;
+        }
       }
+
+        // Forzar actualización del cronómetro
+      updateCountdown();
+      }
+    
+      function toggleMap(mapId) {
+    const mapContainer = document.getElementById(mapId);
+    const button = mapContainer.previousElementSibling;
+    const lang = document.documentElement.lang || 'es';
+    const defaultKey = (mapId === 'map-iglesia') ? 'prog.map.church' : 'prog.map.recep';
+  
+        if (mapContainer.classList.contains('hidden')) {
+        // Abrir mapa
+      mapContainer.classList.remove('hidden');
+      button.innerHTML = `<i data-lucide="map-pin" class="w-5 h-5"></i> ${translations[lang]['prog.map.hide']}`;
+        lucide.createIcons();
+    
+        // Función para cerrar al hacer clic fuera
+      function closeMapOnOutsideClick(event) {
+        // Si el clic NO es dentro del mapa Y NO es en el botón que abrió
+        if (!mapContainer.contains(event.target) && !button.contains(event.target)) {
+        closeMap();
+      }
+    }
+    
+    function closeMap() {
+      mapContainer.classList.add('hidden');
+      button.innerHTML = `<i data-lucide="map-pin" class="w-5 h-5"></i> ${translations[lang][defaultKey]}`;
       lucide.createIcons();
+      // Limpiar evento
+      document.removeEventListener('click', closeMapOnOutsideClick);
+    }
+    
+    // Esperar un ciclo para evitar que el clic actual cierre el mapa inmediatamente
+    setTimeout(() => {
+      document.addEventListener('click', closeMapOnOutsideClick);
+    }, 100);
+    
+      } else {
+    // Cerrar mapa manualmente (botón)
+    mapContainer.classList.add('hidden');
+    button.innerHTML = `<i data-lucide="map-pin" class="w-5 h-5"></i> ${translations[lang][defaultKey]}`;
+    lucide.createIcons();
+     }
     }
 
     // Scroll Animations
@@ -1570,32 +1671,21 @@ window.addEventListener('scroll', () => {
 
     // Asignar la imagen de fondo BLUR a cada slide (sin cargar imágenes extra)
     function setCarouselBlurBackgrounds() {
-    const slides = document.querySelectorAll('.carousel-slide');
+  const slides = document.querySelectorAll('.carousel-slide');
   
-    slides.forEach(slide => {
+  slides.forEach(slide => {
     const img = slide.querySelector('.carousel-image');
     const blurDiv = slide.querySelector('.carousel-blur-bg');
     
-      if (img && blurDiv) {
-      // Usamos la misma URL de la imagen principal para el blur
-      // Esto NO carga una imagen extra, solo usa la misma URL
+    if (img && blurDiv) {
       const imgSrc = img.getAttribute('src');
-      blurDiv.style.setProperty('--bg-image', `url('${imgSrc}')`);
-       }
-     });
+      blurDiv.style.backgroundImage = `url('${imgSrc}')`;
     }
-
-// También actualizar cuando cambie el idioma o se re-dibuje algo
-  const observerBlur = new MutationObserver(() => {
-    setCarouselBlurBackgrounds();
   });
-    observerBlur.observe(document.getElementById('carouselTrack'), { childList: true, subtree: true });
-
+}
 
    // ==================== RSVP FUNCTIONS - VERSIÓN CORREGIDA ====================
-
-  let currentCompanionsCount = 0;
-
+ 
   function showRSVPForm(attending) {
   document.getElementById('rsvp-choices').classList.add('hidden');
   if (attending) {
@@ -1624,7 +1714,6 @@ function resetRSVP() {
   }
   
   // Limpiar acompañantes
-  currentCompanionsCount = 0;
   const companionsContainer = document.getElementById('companions-container');
   if (companionsContainer) {
     companionsContainer.classList.add('hidden');
@@ -1642,8 +1731,7 @@ function resetRSVP() {
 
 function updateCompanions(count) {
   const container = document.getElementById('companions-container');
-  const num = parseInt(count) || 0;
-  currentCompanionsCount = num;
+  const num = parseInt(count) || 0;  
   const lang = document.documentElement.lang || 'es';
   
   if (num > 0) {
@@ -1813,14 +1901,14 @@ async function submitRSVP(e, attending) {
   }
 }
 
-// Detectar sección activa para accesibilidad (opcional)
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.header-link, .mobile-link');
+ // Detectar sección activa para accesibilidad (opcional)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.header-link, .mobile-link');
 
-function updateActiveSection() {
-  const scrollPosition = window.scrollY + 150;
+    function updateActiveSection() {
+    const scrollPosition = window.scrollY + 150;
   
-  sections.forEach(section => {
+    sections.forEach(section => {
     const sectionTop = section.offsetTop;
     const sectionBottom = sectionTop + section.offsetHeight;
     
@@ -1840,8 +1928,14 @@ function updateActiveSection() {
   });
 }
 
-// Llamar al hacer scroll
-window.addEventListener('scroll', updateActiveSection);
+      // Llamar al hacer scroll
+      window.addEventListener('scroll', updateActiveSection);
+
+      // Año dinámico en footer
+      const yearSpan = document.getElementById('currentYear');
+      if (yearSpan) {
+        yearSpan.innerHTML = new Date().getFullYear();
+}
   </script>
 </body>
 </html>
