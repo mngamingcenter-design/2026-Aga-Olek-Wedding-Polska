@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="pl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
   <!-- Título y descripción principal -->
-  <title data-i18n="page.title">Agnieszka & Mario Alejandro - Boda 18 Septiembre 2026</title>
-  <meta name="description" content="Te invitamos a celebrar nuestra boda el viernes 18 de septiembre de 2026. Agnieszka Bonikowska y Mario Alejandro Aguirre Bolivar. ¡Confirma tu asistencia!">
+  <title>Agnieszka & Mario Alejandro - Ślub 18 Września 2026</title>
+  <meta name="description" content="Zapraszamy na nasz ślub w piątek 18 września 2026. Agnieszka Bonikowska i Mario Alejandro Aguirre Bolivar. Potwierdź swoją obecność!">
   <meta name="keywords" content="boda, wedding, Agnieszka, Mario, Zielona Góra, Polonia, septiembre 2026">
   <meta name="author" content="Agnieszka Bonikowska & Mario Alejandro Aguirre Bolivar">
   <meta name="robots" content="index, follow">
@@ -137,9 +137,7 @@
     }
     .btn-outline:hover {
       background-color: hsl(0, 0%, 95%);
-    }
-    .lang-btn {
-      transition: all 0.3s;
+    
     }
     .lang-btn.active {
       font-weight: 700;
@@ -208,71 +206,8 @@
     img {
       content-visibility: auto;
     }
-
-        /* Estilos mejorados para el selector de idioma */
-    .language-selector {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
     
-    /* Estado cuando el header está scrolleado (fondo blanco) */
-    header.scrolled .language-selector {
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-    
-    header.scrolled .language-selector .lang-btn {
-      color: hsl(33, 24%, 44%); /* Color primary de tu web */
-    }
-    
-    header.scrolled .language-selector .lang-btn.active {
-      color: hsl(33, 24%, 44%);
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-    
-    header.scrolled .language-selector .lang-separator {
-      color: rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Estado normal (header transparente) */
-    .language-selector .lang-btn {
-      color: white;
-    }
-    
-    .language-selector .lang-btn.active {
-      color: white;
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-    
-    .language-selector .lang-separator {
-      color: rgba(255, 255, 255, 0.5);
-    }
-    
-    /* Hover effects */
-    .language-selector .lang-btn:hover {
-      opacity: 0.8;
-      transform: scale(1.02);
-    }
-    
-    /* Versión móvil: más compacto */
-     @media (max-width: 768px) {
-      .language-selector {
-        padding: 0.375rem 0.75rem;
-      }
-      .language-selector .lang-btn {
-        font-size: 0.875rem;
-        padding: 0 0.5rem;
-      }
-    }
-
-     .carousel-dot {
+    .carousel-dot {
        width: 10px;
        height: 10px;
       }
@@ -416,10 +351,7 @@
       }
     }
     
-    header.scrolled .header-subtext { color: #2c2c2c !important; 
-    }
-
-  </style>
+    </style>
 </head>
 <body class="antialiased">
   
@@ -443,27 +375,18 @@
 
       <!-- Navegación WEB (visible solo en escritorio) -->
       <nav class="hidden md:flex items-center gap-6 lg:gap-8">
-        <a href="#inicio" data-i18n="nav.home" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Inicio</a>
-        <a href="#mensaje" data-i18n="nav.message" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Mensaje</a>
-        <a href="#historia" data-i18n="nav.story" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Historia</a>
-        <a href="#galeria-nueva" data-i18n="nav.gallery" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Galería</a>
-        <a href="#itinerario" data-i18n="nav.program" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Programa</a>
-        <a href="#rsvp" data-i18n="nav.rsvp" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">RSVP</a>
-        <a href="#informacion" data-i18n="nav.info" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Información</a>
+        <a href="#inicio" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Strona główna</a>
+        <a href="#mensaje" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Wiadomość</a>
+        <a href="#historia" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Nasza historia</a>
+        <a href="#galeria-nueva" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Galeria</a>
+        <a href="#itinerario" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Program</a>
+        <a href="#rsvp" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">RSVP</a>
+        <a href="#informacion" class="text-base font-body font-medium text-white hover:text-primary transition-colors header-link">Informacje</a>
       </nav>
 
       <!-- Grupo derecha: Selector de idioma + Menú hamburguesa (móvil) -->
       <div class="flex items-center gap-3">
-        
-        <!-- Selector de idioma SIEMPRE visible - CON ESTILOS MEJORADOS -->
-      <div class="language-selector flex items-center gap-1 rounded-full px-3 py-1.5 md:px-4 md:py-2 transition-all duration-300" 
-      style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2);">
-      <button onclick="switchLanguage('es')" id="lang-es" 
-        class="lang-btn text-sm md:text-base font-medium px-1.5 transition-colors duration-300" aria-label="Cambiar a español">ES</button>
-      <button onclick="switchLanguage('pl')" id="lang-pl" 
-        class="lang-btn text-sm md:text-base font-medium px-1.5 transition-colors duration-300" aria-label="Zmień na polski">PL</button>
-      </div>
-        
+
         <!-- Botón menú hamburguesa (SOLO visible en móvil) -->
        <button id="mobile-menu-btn" class="md:hidden text-white header-icon"
        aria-label="Menú de navegación" aria-expanded="false"><i data-lucide="menu" class="w-6 h-6"></i>
@@ -475,13 +398,13 @@
 
 <!-- Mobile Menu - SOLO para móvil (sin el selector de idioma porque ya está fuera) -->
 <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl rounded-b-2xl px-6 py-6 space-y-4 fixed top-16 left-4 right-4 z-40">
-  <a href="#inicio" data-i18n="nav.home" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Inicio</a>
-  <a href="#mensaje" data-i18n="nav.message" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Mensaje</a>
-  <a href="#historia" data-i18n="nav.story" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Historia</a>
-  <a href="#galeria-nueva" data-i18n="nav.gallery" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Galería</a>
-  <a href="#itinerario" data-i18n="nav.program" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Programa</a>
-  <a href="#rsvp" data-i18n="nav.rsvp" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">RSVP</a>
-  <a href="#informacion" data-i18n="nav.info" class="block py-2 text-secondary font-body text-lg">Información</a>
+  <a href="#inicio" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Strona główna</a>
+  <a href="#mensaje" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Wiadomość</a>
+  <a href="#historia" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Nasza historia</a>
+  <a href="#galeria-nueva" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Galeria</a>
+  <a href="#itinerario" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">Program</a>
+  <a href="#rsvp" class="block py-2 text-secondary font-body text-lg border-b border-gray-100 mobile-link">RSVP</a>
+  <a href="#informacion" class="block py-2 text-secondary font-body text-lg">Informacje</a>
 </div>
 
   <!-- ==================== SECCIÓN HERO - IMAGEN OPTIMIZADA ==================== -->
@@ -515,10 +438,10 @@
       </h1>
 
       <div class="inline-block border-t border-b border-white/30 py-4 px-6 sm:px-10 my-6 md:my-10">
-        <p data-i18n="hero.date" class="text-xl sm:text-2xl md:text-3xl text-white font-body tracking-widest">Viernes 18 de septiembre 2026</p>
+        <p class="text-xl sm:text-2xl md:text-3xl text-white font-body tracking-widest">Piątek, 18 września 2026 r.</p>
       </div>
 
-      <p data-i18n="hero.subtitle" class="text-lg sm:text-xl md:text-2xl text-white/90 font-body italic">Nos casamos y queremos celebrarlo contigo</p>
+      <p class="text-lg sm:text-xl md:text-2xl text-white/90 font-body italic">Bierzemy ślub i chcemy świętować z Tobą</p>
 
       <div class="mt-8 md:mt-12">
         <span class="text-4xl md:text-6xl text-primary/80">✧</span>
@@ -533,17 +456,17 @@
       <div class="text-center mb-12">
         <div class="flex items-center justify-center gap-4 mb-4">
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
-          <h2 data-i18n="count.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Cuenta Regresiva</h2>
+          <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Odliczanie</h2>
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
         </div>
-        <p data-i18n="count.subtitle" class="text-lg md:text-xl text-muted-foreground font-body italic">Faltan solo...</p>
+        <p class="text-lg md:text-xl text-muted-foreground font-body italic">Zostało tylko...</p>
       </div>
 
       <div class="flex flex-wrap justify-center gap-4 md:gap-8 max-w-4xl mx-auto" id="countdown-container"></div>
 
       <div class="text-center mt-12">
         <div class="inline-block border-t border-b border-primary/20 py-3 px-10">
-          <p data-i18n="count.waiting" class="text-sm md:text-base text-secondary/80 font-body tracking-widest uppercase">Te esperamos con mucha ilusión</p>
+          <p class="text-sm md:text-base text-secondary/80 font-body tracking-widest uppercase">Czekamy na Was z niecierpliwością i radością</p>
         </div>
       </div>
     </div>
@@ -555,20 +478,19 @@
       <div class="text-center mb-12 fade-in">
         <div class="flex items-center justify-center gap-4 mb-4">
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
-          <h2 data-i18n="message.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Un mensaje de nuestro corazón</h2>
+          <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Wiadomość prosto z serca</h2>
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
         </div>
       </div>
 
       <div class="bg-accent/30 rounded-2xl p-8 md:p-12 shadow-elegant fade-in text-center">
-        <p data-i18n="message.text1" class="text-xl md:text-2xl font-body text-secondary/80 leading-relaxed italic mb-6">
-          "Querida Familia y Amigos..."
+        <p class="text-xl md:text-2xl font-body text-secondary/80 leading-relaxed italic mb-6">
+          Drodzy Rodzice, Rodzino i Przyjaciele...
         </p>
-        <p data-i18n="message.text2" class="text-lg md:text-xl font-body text-secondary/70 leading-relaxed">
-          Este día es especial no solo por nosotros, sino porque ustedes son parte de nuestra historia. 
-          Cada uno de ustedes deja una huella en nuestro corazón. Gracias por acompañarnos en este viaje, 
-          por su amor, su apoyo y por hacer que este momento sea aún más significativo. 
-          Los llevamos con nosotros hoy y siempre.
+        <p class="text-lg md:text-xl font-body text-secondary/70 leading-relaxed">
+        Ten dzień jest wyjątkowy nie tylko ze względu na nas, ale także dlatego, że to Wy - nasze rodziny i przyjaciele - jesteście częścią naszej historii.
+        Każdy z Was zostawił trwały ślad w naszych sercach.
+        Dziękujemy, że towarzyszycie nam w tej podróży, za Wasze wsparcie i za to, że czynicie tę chwilę jeszcze piękniejszą.
         </p>
         <div class="mt-8 flex justify-center gap-2">
           <span class="text-primary/50">✧</span>
@@ -586,10 +508,10 @@
       <div class="text-center mb-12 fade-in">
         <div class="flex items-center justify-center gap-4 mb-4">
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
-          <h2 data-i18n="story.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Nuestra historia</h2>
+          <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Nasza historia</h2>
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
         </div>
-        <p data-i18n="story.subtitle" class="text-lg text-muted-foreground font-body">Cómo empezó todo...</p>
+      <p class="text-lg text-muted-foreground font-body">Jak to się wszystko zaczęło...</p>
       </div>
 
       <div class="space-y-8 fade-in">
@@ -599,49 +521,49 @@
               <i data-lucide="heart" class="w-8 h-8 text-primary"></i>
             </div>
             <div class="flex-1">
-              <h3 data-i18n="story.meet.title" class="text-2xl font-heading text-center mb-4">✨ Cómo nos conocimos ✨</h3>
-              <p data-i18n="story.meet.text1" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
-                Nuestro camino se cruzó  cuando menos lo esperábamos. Desde aquella primera conversación, 
-                supimos que algo especial estaba naciendo. Cada momento compartido fue construyendo esta historia 
-                que hoy celebramos.
+              <h3 class="text-2xl font-heading text-center mb-4">✨ Jak się poznaliśmy ✨</h3>
+              <p class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                Nasze drogi skrzyżowały się w najmniej oczekiwanym momencie. Już od pierwszej rozmowy 
+                czuliśmy, że rodzi się między nami coś wyjątkowego. Każda wspólna chwila była cegiełką 
+                 budującą historię, którą dziś z radością świętujemy.
               </p>
-              <p data-i18n="story.meet.text2" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
-                Madrid fue el lugar donde esta historia de amor comenzo, un Peruano se propuso conquistar a su Princesita Polaca ❤️...
+              <p class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                Wszystko zaczęło się w Madrycie – to właśnie tam pewien Peruwiańczyk postanowił zdobyć serce swojej polskiej Księżniczki ❤️....
               </p>
-              <p data-i18n="story.meet.text3" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">  
-                Es sin dudas la mejor historia de amor que alguien puede tener en la vida. Dos personas con diferentes culturas, de diferentes continentes,
-                hablando diferentes idiomas, sin duda Dios unio nuestros caminos para que sea un ejemplo a contar del amor puro que dos personas 
-                estan dispuesto a dar del uno al otro..
-              </p>             
+              <p class="text-lg text-secondary/80 font-body leading-relaxed mb-6">  
+                To bez wątpienia najpiękniejszy scenariusz, jaki napisało dla nas życie. Dwa światy, dwa kontynenty i dwa różne języki połączyły się w jeden. 
+                Wierzymy, że to przeznaczenie postawiło nas na swojej drodze, by pokazać, że miłość nie zna granic i jest gotowa na wszystko.
+              </p>           
            
-              <h3 data-i18n="story.proposal.title" class="text-2xl font-heading text-center mb-4 mt-8">💍 La propuesta 💍</h3>
-              <p data-i18n="story.proposal.text1" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
-              Fue realmente un dia inovidable. Un 'si' que cambiaria nuestras vidas para siempre.            
+              <h3 class="text-2xl font-heading text-center mb-4 mt-8">💍 Oświadczyny 💍</h3>
+              <p class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                To był naprawdę niezapomniany dzień – jedno „tak”, które na zawsze odmieniło nasze życie.             
               </p>
-              <p data-i18n="story.proposal.text2" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
-                Mario Alejandro:
-                Recuerdo que practicaba a solas las palabras que queria que escuche y que sepa que hablaba con el corazon.
-                En un viaje a "Montenegro" visitamos 3 ciudades, no me sentia tan contento en proponerle matrimonio en esas dos primeras ciudades,
-                pero la ultima ciudad "Budva" fue el mejor lugar, en la playa, con el sonido del mar, bailando como dos almas que se olvidan del mundo 
-                por que solo se necesitan del uno al otro... el corazon me latia muy rapido.. y supe que el momento de las palabras que estuve practicando
-                tenian que salir de mi boca.. despues de unas bonitas palabras, con muchos nervios y con todo mi amor dije: "Agnieszka Bonikowska , te gustaria casarte conmigo"... 
+              <p class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                Mario Alejandro: Pamiętam, jak w myślach powtarzałem każde słowo, które chciałem jej powiedzieć. Pragnąłem, by poczuła, że płyną one prosto z serca. 
+                Podczas naszej podróży do Czarnogóry odwiedziliśmy trzy miasta. W dwóch pierwszych czułem, że to jeszcze nie ten moment... ale ostatnie z nich, Budva,
+                okazało się miejscem idealnym. Byliśmy na plaży, otoczeni kojącym szumem fal. Tańczyliśmy wtuleni w siebie, jak dwie dusze, które do szczęścia potrzebowały
+                odnaleźć siebie nawzajem. Serce biło mi jak oszalałe. Wiedziałem, że to właśnie ta chwila. Odłożyłem na bok wyćwiczone zdania i po prostu pozwoliłem mówić emocjom.
+                Pełen drżenia, ale i bezgranicznej miłości, zapytałem: „Agnieszka Bonikowska, czy zechcesz wyjść za mnie?”.
               </p>
               
 
-              <p data-i18n="story.proposal.text4" class="text-lg text-secondary/80 font-body leading-relaxed">
-                Agnieszka: ¿Y yo? Aunque Mario intentaba disimular sus nervios valientemente, podía ver en sus ojos que algo se traía entre manos... Cuando pronunció aquellas palabras, el mundo se detuvo por un instante y en mi mente solo había una respuesta.
+              <p class="text-lg text-secondary/80 font-body leading-relaxed">
+                Agnieszka: A ja? Choć Mario dzielnie skrywał swoje zdenerwowanie, w jego oczach widziałam, że „coś się święci”... Kiedy padły te słowa, świat na moment się zatrzymał,
+                a w głowie miałam tylko jedną odpowiedź.
               </p>
 
-              <p data-i18n="story.proposal.text5" class="text-lg text-secondary/80 font-body leading-relaxed">
-                Desde ese momento, cada vez que miro mi anillo, todas esas emociones vuelven a mí. No solo veo el brillo de aquella noche en Budva, sino sobre todo nuestro futuro juntos.
+              <p class="text-lg text-secondary/80 font-body leading-relaxed">
+                Od tamtej chwili, za każdym razem, gdy patrzę na mój pierścionek, wracają te wszystkie emocje. Widzę w nim nie tylko blask tamtego wieczoru w Budvie, ale przede wszystkim naszą wspólną przyszłość.
               </p>
 
-              <p data-i18n="story.proposal.text6" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
-                Me llena una alegría inmensa y esa dulce e impaciente espera por todo lo que nos queda por vivir. Sé que nuestra boda y celebrar con todos ustedes es solo el comienzo: uno de los muchos días maravillosos que aún están por venir.
+              <p class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                Przepełnia mnie ogromna radość i to słodkie, niecierpliwe oczekiwanie na wszystko, co razem przeżyjemy. Wiem, że nasz ślub i wspólne świętowanie z Wami to dopiero początek –
+                jeden z wielu najpiękniejszych dni, które są jeszcze przed nami.
               </p>
 
-              <p data-i18n="story.proposal.text3" class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
-                El resto de la historia se cuenta sola... ❤️
+              <p class="text-lg text-secondary/80 font-body leading-relaxed mb-6">
+                Dalsza część tej historii pisze się już każdego dnia w naszych sercach... ❤️
               </p>
               
             </div>
@@ -649,7 +571,7 @@
         </div>
         
         <div class="text-center mt-8">
-          <p data-i18n="story.footer" class="text-muted-foreground font-body italic">✧ Y ahora, con mucha emoción, esperamos el 18 de septiembre de 2026 ✧</p>
+          <p class="text-muted-foreground font-body italic">✧ A teraz z wielką radością czekamy na 18 września 2026 roku ✧</p>
         </div>
       </div>
     </div>
@@ -661,10 +583,10 @@
     <div class="text-center mb-12 fade-in">
       <div class="flex items-center justify-center gap-4 mb-4">
         <span class="text-xl md:text-2xl text-primary/60">✧</span>
-        <h2 data-i18n="gallery.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Galería de recuerdos</h2>
+        <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Galeria wspomnień</h2>
         <span class="text-xl md:text-2xl text-primary/60">✧</span>
       </div>
-      <p data-i18n="gallery.subtitle" class="text-lg text-muted-foreground font-body">Momentos que atesoramos para siempre</p>
+      <p class="text-lg text-muted-foreground font-body">Chwile, które na zawsze pozostaną w naszych sercach</p>
     </div>
 
     <!-- Carrusel con efecto BLUR CSS (sin imágenes duplicadas) -->
@@ -840,7 +762,7 @@
       <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-20" id="carouselDots"></div>
     </div>
     
-    <p data-i18n="gallery.footer" class="text-center text-sm text-muted-foreground mt-6 font-body italic">✧ Desliza para ver más momentos especiales ✧</p>
+    <p class="text-center text-sm text-muted-foreground mt-6 font-body italic">✧ Przesuwaj, by zobaczyć więcej wyjątkowych chwil ✧</p>
   </div>
 </section>
 
@@ -850,10 +772,10 @@
       <div class="text-center mb-16 fade-in">
         <div class="flex items-center justify-center gap-4 mb-4">
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
-          <h2 data-i18n="prog.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Programa del Día</h2>
+          <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Plan Uroczystości</h2>
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
         </div>
-        <p data-i18n="prog.subtitle" class="text-lg md:text-xl text-muted-foreground font-body italic">Viernes 18 de septiembre 2026</p>
+        <p class="text-lg md:text-xl text-muted-foreground font-body italic">Piątek, 18 września 2026 r.</p>
       </div>
 
       <div class="relative">
@@ -868,14 +790,14 @@
                     <i data-lucide="church" class="w-6 h-6 text-primary"></i>
                   </div>
                   <div class="flex-1">
-                    <div data-i18n="prog.misa2" ext-sm font-medium text-primary uppercase tracking-widest mb-2">15:00H</div>
-                    <h3 data-i18n="prog.misa" class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">MISA</h3>
+                    <div class="text-sm font-medium text-primary uppercase tracking-widest mb-2">15:00H</div>
+                    <h3 class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">MSZA ŚWIĘTA</h3>
                     <div class="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                       <i data-lucide="map-pin" class="w-4 h-4"></i>
                       <span class="font-body" data-i18n="info.misa.location">Iglesia Św. Mikołaja w Zielonej Górze - Raculi</span>
                     </div>
-                    <button type="button" onclick="toggleMap('map-iglesia')" data-i18n="prog.map.church" class="btn-primary flex items-center justify-center gap-2 px-6 py-3 w-full md:w-auto mx-auto">
-                      Ver mapa de la iglesia
+                    <button type="button" onclick="toggleMap('map-iglesia')" class="btn-primary flex items-center justify-center gap-2 px-6 py-3 w-full md:w-auto mx-auto">
+                       Zobacz mapę dojazdu do kościoła
                     </button>
                     <div id="map-iglesia" class="hidden mt-4 rounded-xl overflow-hidden shadow-elegant border border-border">
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.1326337309592!2d15.566561999999998!3d51.913291199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470611eff4d64113:0xd6a6bd10adda2526!2sChurch%20of%20Sts.%20Nicholas!5e0!3m2!1ses!2ses!4v1773791308785!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -895,8 +817,8 @@
                     <i data-lucide="sparkles" class="w-6 h-6 text-primary"></i>
                   </div>
                   <div class="flex-1">
-                    <h3 data-i18n="prog.recep" class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">RECEPCIÓN</h3>
-                    <p data-i18n="prog.recep.desc" class="text-base text-secondary/70 font-body mb-4">Inicio de la celebración</p>
+                    <h3 class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">PRZYJĘCIE WESELNE</h3>
+                    <p class="text-base text-secondary/70 font-body mb-4">Rozpoczęcie świętowania</p>
                     <div class="flex items-center gap-2 text-sm text-muted-foreground mb-6">
                       <i data-lucide="map-pin" class="w-4 h-4"></i>
                       <span class="font-body" data-i18n="info.recep.location">ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia</span>
@@ -931,8 +853,8 @@
                     <i data-lucide="music" class="w-6 h-6 text-primary"></i>
                   </div>
                   <div class="flex-1">
-                    <h3 data-i18n="prog.cena" class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">CENA Y FIESTA</h3>
-                    <p data-i18n="prog.cena.desc" class="text-base text-secondary/70 font-body mb-4">¡A bailar toda la noche!</p>
+                    <h3 class="text-2xl md:text-3xl font-medium text-secondary font-heading mb-3">KOLACJA I ZABAWA</h3>
+                    <p class="text-base text-secondary/70 font-body mb-4">Tańce do białego rana!</p>
                   </div>
                 </div>
               </div>
@@ -946,13 +868,13 @@
         <div class="flex items-start gap-5">
           <i data-lucide="shirt" class="w-6 h-6 md:w-8 md:h-8 text-primary flex-shrink-0 mt-1"></i>
           <div>
-            <h3 data-i18n="dress.title" class="text-2xl md:text-3xl font-medium text-secondary font-medium mb-4">Código de Vestimenta</h3>
+            <h3 class="text-2xl md:text-3xl font-medium text-secondary font-medium mb-4">Dress Code</h3>
             <p class="text-base md:text-lg text-secondary/80 font-body leading-relaxed">
-              <span data-i18n="dress.desc" class="font-medium">Formal, Elegante</span><br />
-              <span data-i18n="dress.sub">Vestido y Traje</span>
+              <span class="font-medium">Strój wizytowy / Elegancki</span>
+              <br/>
+              <span>Suknie wieczorowe i garnitury</span>
             </p>
-            <p data-i18n="dress.footer" class="text-sm text-muted-foreground font-body mt-4 italic">
-              ✧ Ven con tu mejor versión para celebrar este día especial ✧
+            <p class="text-sm text-muted-foreground font-body mt-4 italic">✧ Przygotujcie swoje najlepsze kreacje, aby wspólnie świętować ten wyjątkowy dzień ✧
             </p>
           </div>
         </div>
@@ -966,11 +888,11 @@
     <div class="text-center mb-12 fade-in">
       <div class="flex items-center justify-center gap-4 mb-4">
         <span class="text-xl md:text-2xl text-primary/60">✧</span>
-        <h2 data-i18n="rsvp.title" class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">¿Nos acompañarás?</h2>
+        <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Czy będziesz z nami?</h2>
         <span class="text-xl md:text-2xl text-primary/60">✧</span>
       </div>
-      <p data-i18n="rsvp.subtitle" class="text-lg text-muted-foreground font-body mb-2">Tu presencia es el mejor regalo</p>
-      <p data-i18n="rsvp.deadline" class="text-sm text-primary/70 font-body italic">✧ Por favor confirmar su asistencia antes del 18 de Julio del 2026 ✧</p>
+      <p class="text-lg text-muted-foreground font-body mb-2">Twoja obecność jest dla nas najpiękniejszym prezentem</p>
+      <p class="text-sm text-primary/70 font-body italic">✧ Prosimy o potwierdzenie przybycia do dnia 18 lipca 2026 r. ✧</p>
     </div>
 
     <div class="bg-white rounded-xl p-6 md:p-10 shadow-elegant fade-in">
@@ -978,10 +900,10 @@
       <!-- Botones de selección inicial -->
       <div id="rsvp-choices" class="grid md:grid-cols-2 gap-6">
         <button onclick="showRSVPForm(true)" class="btn-primary flex items-center justify-center gap-2 py-4 text-lg">
-          <i data-lucide="heart" class="w-5 h-5"></i><span data-i18n="rsvp.yes">Sí, asistiré</span>
+          <i data-lucide="heart" class="w-5 h-5"></i><span>Tak, będę obecny / obecna</span>
         </button>
         <button onclick="showRSVPForm(false)" class="btn-outline py-4 text-lg">
-          <span data-i18n="rsvp.no">No podré asistir</span>
+          <span>Niestety nie będę mógł / mogła uczestniczyć</span>
         </button>
       </div>
 
@@ -989,7 +911,7 @@
       <form id="rsvp-form-yes" class="hidden space-y-6 mt-6" onsubmit="submitRSVP(event, true)">
         <!-- Nombre principal -->
         <div>
-          <label class="block text-secondary font-body font-medium mb-2" data-i18n="rsvp.form.name">Tu nombre completo *</label>
+          <label class="block text-secondary font-body font-medium mb-2">Imię i nazwisko *</label>
           <input type="text" name="guestName" id="guestName" required 
                  class="w-full p-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                  data-i18n-placeholder="rsvp.form.placeholder.name" placeholder="Nombre y apellido">
@@ -997,7 +919,7 @@
         
         <!-- Número de acompañantes -->
         <div>
-          <label class="block text-secondary font-body font-medium mb-2" data-i18n="rsvp.form.companions">¿Cuántos acompañantes traerás?</label>
+          <label class="block text-secondary font-body font-medium mb-2">Ilu gości będzie Ci towarzyszyć?</label>
           <input type="number" name="companions" id="companions" min="0" max="10" value="0" 
                  onchange="updateCompanions(parseInt(this.value))"
                  class="w-full p-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50">
@@ -1008,18 +930,18 @@
 
         <!-- Información del invitado principal -->
         <div class="p-6 bg-accent/20 rounded-lg border border-border space-y-4">
-          <h4 class="text-xl font-heading text-secondary" data-i18n="rsvp.companions.title">"Información de acompañantes"</h4>
+          <h4 class="text-xl font-heading text-secondary">"Informacje o osobach towarzyszących"</h4>
           
           <div class="flex items-center justify-between">
             <label class="text-base font-body text-secondary flex items-center gap-2">
               <i data-lucide="wine" class="w-4 h-4 text-primary"></i>
-              <span data-i18n="rsvp.form.alcohol">¿Consumirás alcohol?</span>
+              <span>Czy będziesz spożywać alkohol?</span>
             </label>
             <input type="checkbox" name="guestAlcohol" class="w-5 h-5 accent-primary rounded">
           </div>
           
           <div>
-            <label class="block text-secondary font-body font-medium mb-2" data-i18n="rsvp.form.allergies.label">Alergias o restricciones alimentarias</label>
+            <label class="block text-secondary font-body font-medium mb-2">Alergie lub ograniczenia dietetyczne</label>
             <textarea name="guestAllergies" id="guestAllergies" rows="3" 
                       class="w-full p-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
                       data-i18n-placeholder="rsvp.form.placeholder.allergies" 
@@ -1029,9 +951,9 @@
 
         <!-- Botones de acción -->
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <button type="button" onclick="resetRSVP()" class="btn-outline flex-1 py-3"><span data-i18n="common.back">Volver</span></button>
+          <button type="button" onclick="resetRSVP()" class="btn-outline flex-1 py-3"><span>Powrót</span>
           <button type="submit" class="btn-primary flex-1 py-3" id="submit-btn-yes">
-            <span data-i18n="rsvp.form.send">Confirmar asistencia</span>
+            <span>Potwierdź obecność</span>
           </button>
         </div>
       </form>
@@ -1039,12 +961,12 @@
       <!-- FORMULARIO NO ASISTIRÉ -->
       <div id="rsvp-form-no" class="hidden text-center space-y-6 mt-6">
         <i data-lucide="heart-off" class="w-16 h-16 text-muted-foreground mx-auto"></i>
-        <p data-i18n="rsvp.no.message1" class="text-xl text-secondary/80 font-body">Lamentamos que no puedas acompañarnos en nuestro día especial.</p>
-        <p data-i18n="rsvp.no.message2" class="text-lg text-muted-foreground font-body italic">¡Estarás en nuestros pensamientos!</p>
+        <p class="text-xl text-secondary/80 font-body">Bardzo nam przykro, że nie możesz towarzyszyć nam w tym wyjątkowym dniu.</p>
+        <p data-i18n="rsvp.no.message2" class="text-lg text-muted-foreground font-body italic">Będziesz obecny w naszych myślach!</p>
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <button type="button" onclick="resetRSVP()" class="btn-outline flex-1 py-3"><span data-i18n="common.back">Volver</span></button>
+          <button type="button" onclick="resetRSVP()" class="btn-outline flex-1 py-3"><span>Powrót</span></button>
           <button onclick="submitRSVP(event, false)" class="btn-primary flex-1 py-3" id="submit-btn-no">
-            <span data-i18n="rsvp.form.send">Confirmar asistencia</span>
+            <span>Potwierdź obecność</span>
           </button>
         </div>
       </div>
@@ -1052,12 +974,12 @@
       <!-- Mensajes de éxito/error -->
       <div id="rsvp-success" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
         <i data-lucide="check-circle-2" class="w-5 h-5 text-green-600"></i>
-        <p data-i18n="rsvp.success" class="text-green-800 font-body">¡Gracias! Tu respuesta ha sido enviada correctamente.</p>
+        <p class="text-green-800 font-body">Dziękujemy! Twoja odpowiedź została poprawnie wysłana.</p>
       </div>
       
       <div id="rsvp-error" class="hidden mt-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
         <i data-lucide="alert-circle" class="w-5 h-5 text-red-600"></i>
-        <p data-i18n="rsvp.error" class="text-red-800 font-body">Hubo un error al enviar tu respuesta. Por favor, inténtalo de nuevo.</p>
+        <p data-i18n="rsvp.error" class="text-red-800 font-body">Wystąpił błąd podczas wysyłania odpowiedzi. Spróbuj ponownie.</p>
       </div>
     </div>
   </div>
@@ -1069,17 +991,17 @@
       <div class="text-center mb-16 fade-in">
         <div class="flex items-center justify-center gap-4 mb-4">
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
-          <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide" data-i18n="info.title">Información Adicional</h2>
+          <h2 class="text-3xl md:text-5xl font-medium text-secondary font-heading tracking-wide">Informacje dodatkowe</h2>
           <span class="text-xl md:text-2xl text-primary/60">✧</span>
         </div>
         
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
           <div class="flex items-center gap-4 mb-6">
             <i data-lucide="camera" class="w-6 h-6 text-primary"></i>
-            <h3 data-i18n="info.gallery.title">Galería</h3>
+            <h3>Galeria</h3>
           </div>
-          <p data-i18n="info.gallery.desc">Aunque tenemos nuestro propio fotógrafo, te animamos a que compartas tus fotos.</p>
-          <p data-i18n="info.gallery.qr">✧Escanea el código QR para subir tus fotos y videos del día✧</p>
+          <p>Choć mamy własnego fotografa, zachęcamy do dzielenia się swoimi zdjęciami.</p>
+          <p>✧ Zeskanuj kod QR, aby dodać zdjęcia i filmy z tego dnia ✧</p>
           <div class="flex justify-center">
             <div class="border-2 border-dashed border-border p-10 rounded-xl text-center">
             <img src="https://i.ibb.co/fzPxTNpd/knipsmig-event-qr.png" class="w-40 mx-auto mb-4" loading="lazy" decoding="async"
@@ -1091,26 +1013,26 @@
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
           <div class="flex items-center gap-4 mb-6">
             <i data-lucide="sparkles" class="w-6 h-6 text-primary"></i>
-            <h3 data-i18n="info.special.title">Información Especial</h3>
+            <h3>Ważne informacje</h3>
           </div>
-          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.special.arrival">✧ Por Favor confirmar su asistencia antes del 18 de Julio del 2026 ✧
-               
-✧ Recomendamos llegar con 15-20 minutos de antelación para encontrar estacionamiento y acomodarse ✧</p>
+          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap">✧ Prosimy o potwierdzenie przybycia do dnia 18 lipca 2026 r. ✧
+
+ ✧ Zalecamy przybycie 15–20 minut wcześniej, aby znaleźć miejsce parkingowe i spokojnie się przygotować ✧</p>
         </div>
 
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
           <div class="flex items-center gap-4 mb-6">
             <i data-lucide="hotel" class="w-6 h-6 text-primary"></i>
-            <h3 data-i18n="info.hotel.title">Información del Hotel</h3>
+            <h3>Informacje o hotelu</h3>
           </div>
-          <p class="text-lg text-secondary/80 font-body leading-relaxed mb-4" data-i18n="info.hotel.desc">
-            ForRest Hotel & Restaurant es un lugar unico, espacioso, rodeado de naturaleza e ideal para eventos inolvidables, 
-            cuenta con Spa, Piscina, Jacuzzi, Sauna, Masajes 
-            (Servicios especiales tienen cobros adicionales directo con el hotel).
+          <p class="text-lg text-secondary/80 font-body leading-relaxed mb-4">
+            ForRest Hotel & Restaurant to wyjątkowe, przestronne miejsce w sercu natury, w którym każde wydarzenie staje się niezapomnianym przeżyciem. 
+            Oferuje spa, basen, jacuzzi, saunę oraz masaże 
+            (usługi dodatkowe płatne bezpośrednio w hotelu).
           </p>
-          <p class="text-lg text-secondary/80 font-body leading-relaxed mb-4" data-i18n="info.hotel.location">
-            El hotel está a 2 minutos de nuestra Iglesia
-            y cuenta con todas las comodidades necesarias.
+          <p class="text-lg text-secondary/80 font-body leading-relaxed mb-4">
+          Hotel znajduje się 2 minuty od naszego kościoła
+  i zapewnia wszelkie niezbędne udogodnienia.
           </p>
           
         </div>
@@ -1118,15 +1040,17 @@
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
           <div class="flex items-center gap-4 mb-6">
             <i data-lucide="hotel" class="w-6 h-6 text-primary"></i>
-            <h3 data-i18n="info.hospedaje.title">Hospedaje</h3>
+            <h3 data-i18n="info.hospedaje.title">Zakwaterowanie przed ślubem</h3>
           </div>
-          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.hospedaje.desc">Para aquellos que vengan de fuera, hemos reservado habitaciones para usdtedes en nuestro Hotel.
+          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap">Dla gości przyjezdnych zarezerwowaliśmy pokoje w hotelu ForRest.
 
-Invitados tienen acceso al ForRest Hotel: check in 18 Septiembre 2026 - 15:00h  - check out 19 Septiembre 2026 - 11:00h 
-Si desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitacion.</p>
+      Zameldowanie 18 września 2026, godz. 15:00
+      wymeldowanie 19 września 2026, godz. 11:00 
 
-          <p class="text-lg text-secondary/80 font-body leading-relaxed" data-i18n="info.hotel.contact">
-            ¿Te gustaría llegar antes o quedarte más tiempo? Avísanos y organizaremos juntos tu estancia. Tenemos precios especiales para Nuestros invitados. 💍
+      Wcześniejsze zameldowanie/wymeldowanie: 40 zł za godzinę za pokój.</p>
+
+          <p class="text-lg text-secondary/80 font-body leading-relaxed">
+            Chcesz przyjechać wcześniej lub zostać dłużej? Daj nam znać – pomożemy zorganizować Twój pobyt. Mamy specjalne ceny dla naszych gości. 💍
                     <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap"></p>
            Agnieszka   +48- 696 456 477   
           <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap"></p>                                 
@@ -1137,11 +1061,11 @@ Si desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitac
         <div class="bg-white rounded-xl p-8 shadow-elegant border border-border fade-in">
           <div class="flex items-center gap-4 mb-6">
             <i data-lucide="gift" class="w-6 h-6 text-primary"></i>
-            <h3 data-i18n="info.gifts.title">Lista de Regalos</h3>
+            <h3>Prezenty</h3>
           </div>
-          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap" data-i18n="info.gifts.desc">Vuestra presencia es nuestro mejor regalo. Sin embargo, en lugar de los tradicionales ramos de flores, apreciaremos una botella de vino 🍷 o un libro interesante.
+          <p class="text-lg text-secondary/80 font-body leading-relaxed whitespace-pre-wrap">Wasza obecność jest dla nas najpiękniejszym prezentem. Będzie nam bardzo miło, jeśli zamiast tradycyjnych kwiatów zechcecie nas obdarować butelką wina.🍷 lub ciekawą książką.📘
 
-Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuestro apoyo, para asi iniciar nuestra vida juntos en Polonia. ❤️</p>
+Ponadto, zamiast konwencjonalnych prezentów, będziemy bardzo wdzięczni za Wasze wsparcie, aby rozpocząć nasze wspólne życie w Polsce. ❤️</p>
         </div>
       </div>
     </div>
@@ -1165,7 +1089,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
       <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 my-10 text-lg font-body text-white/90">
         <div class="flex items-center gap-3">
           <i data-lucide="calendar" class="w-5 h-5 text-accent"></i>
-          <span data-i18n="prog.subtitle">18 Septiembre 2026</span>
+          <span data-i18n="prog.subtitle">Piątek, 18 września 2026 r.</span>
         </div>
         <div class="flex items-center gap-3">
           <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
@@ -1178,7 +1102,7 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
       </div>
 
       <div class="border-t border-white/10 pt-8 mt-8">
-        <p data-i18n="footer.message">✧ Con todo nuestro amor, esperamos celebrar este día especial contigo! ✧</p>
+        <p>✧ Z całym naszym sercem, mamy nadzieję świętować ten wyjątkowy dzień razem z Tobą! ✧</p>
         <p class="text-sm text-white/40 mt-6 font-body">© <span id="currentYear"></span> Aga & Olek Wedding</p>
       </div>
     </div>
@@ -1189,213 +1113,8 @@ Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuest
     lucide.createIcons();
 
     // ==================== SISTEMA DE IDIOMAS ====================
-    const translations = {
-      es: {
-        "nav.home": "Inicio",
-        "nav.message": "Mensaje",
-        "nav.story": "Historia",
-        "nav.gallery": "Galería",
-        "nav.program": "Programa",
-        "nav.rsvp": "RSVP",
-        "nav.info": "Información",
-        "hero.date": "Viernes 18 de septiembre 2026",
-        "hero.subtitle": "Nos casamos y queremos celebrarlo contigo",
-        "count.title": "Cuenta Regresiva",
-        "count.subtitle": "Faltan solo...",
-        "days": "Días",
-        "hours": "Horas",
-        "minutes": "Minutos",
-        "seconds": "Segundos",
-        "count.waiting": "Te esperamos con mucha ilusión",
-        "arrived": "¡El gran día ha llegado!",
-        // Mensaje de la pareja
-        "message.title": "Un mensaje de nuestro corazón",
-        "message.text1": "Querida Familia y Amigos...",
-        "message.text2": "Este día es especial no solo por nosotros, sino porque ustedes son parte de nuestra historia. Cada uno de ustedes deja una huella en nuestro corazón. Gracias por acompañarnos en este viaje, por su amor, su apoyo y por hacer que este momento sea aún más significativo. Los llevamos con nosotros hoy y siempre.",
-        // Nuestra historia
-        "story.title": "Nuestra historia",
-        "story.subtitle": "Cómo empezó todo...",
-        "story.meet.title": "✨ Cómo nos conocimos ✨",
-        "story.meet.text1": "Nuestro camino se cruzó cuando menos lo esperábamos. Desde aquella primera conversación, supimos que algo especial estaba naciendo. Cada momento compartido fue construyendo esta historia que hoy celebramos.",
-        "story.meet.text2": "Madrid fue el lugar donde esta historia de amor comenzo, un Peruano se propuso conquistar a su Princesita Polaca ❤️... ",
-        "story.meet.text3": "Es sin dudas la mejor historia de amor que alguien puede tener en la vida. Dos personas con diferentes culturas, de diferentes continentes, hablando diferentes idiomas, sin duda Dios unio nuestros caminos para que sea un ejemplo a contar del amor puro que dos personas estan dispuesto a dar del uno al otro..",
-        "story.proposal.title": "💍 La propuesta 💍",
-        "story.proposal.text1": "Fue realmente un dia inovidable. Un 'si' que cambiaria nuestras vidas para siempre.",
-        "story.proposal.text2": "Mario Alejandro: Recuerdo que practicaba a solas las palabras que queria que escuche y que sepa que hablaba con el corazon. En un viaje a *Montenegro* visitamos 3 ciudades, no me sentia tan contento en proponerle matrimonio en esas dos primeras ciudades,pero la ultima ciudad *Budva* fue el mejor lugar, en la playa, con el sonido del mar, bailando como dos almas que se olvidan del mundo por que solo se necesitan del uno al otro... el corazon me latia muy rapido.. y supe que el momento de las palabras que estuve practicando tenian que salir de mi boca.. despues de unas bonitas palabras, con muchos nervios y con todo mi amor dije: ''Agnieszka Bonikowska , te gustaria casarte conmigo...'' ",
-        "story.proposal.text3": "El resto de la historia se cuenta sola... ❤️",
-        "story.proposal.text4": "Agnieszka: ¿Y yo? Aunque Mario intentaba disimular sus nervios valientemente, podía ver en sus ojos que algo se traía entre manos... Cuando pronunció aquellas palabras, el mundo se detuvo por un instante y en mi mente solo había una respuesta.",
-        "story.proposal.text5": "Desde ese momento, cada vez que miro mi anillo, todas esas emociones vuelven a mí. No solo veo el brillo de aquella noche en Budva, sino sobre todo nuestro futuro juntos. ",
-        "story.proposal.text6": "Me llena una alegría inmensa y esa dulce e impaciente espera por todo lo que nos queda por vivir. Sé que nuestra boda y celebrar con todos ustedes es solo el comienzo: uno de los muchos días maravillosos que aún están por venir.",
-        "story.footer": "✧ Y ahora, con mucha emoción, esperamos el 18 de septiembre de 2026 ✧",
-        // Galería
-        "gallery.title": "Galería de recuerdos",
-        "gallery.subtitle": "Momentos que atesoramos para siempre",
-        "gallery.placeholder": "📷 Agrega aquí tu foto",
-        "gallery.footer": "✧ Desliza para ver más momentos especiales ✧",
-        // Programa
-        "prog.title": "Programa del Día",
-        "prog.subtitle": "Viernes 18 de septiembre 2026",
-        "prog.misa": "MISA",
-        "prog.misa2": "15:00H",
-        "info.misa.location": "Iglesia Św. Mikołaja w Zielonej Górze - Raculi",
-        "prog.recep": "RECEPCIÓN",
-        "info.recep.location": "ForRest Hotel & Restaurant, Dirección: ul. Głogowska 4, 66-004 Zielona Góra, Polonia",
-        "prog.recep.desc": "Inicio de la celebración",
-        "prog.hotel.website": "Visitar sitio web del Hotel",
-        "prog.coctel": "CÓCTEL",
-        "prog.coctel.desc": "Aperitivos y bebidas",
-        "prog.cena": "CENA Y FIESTA",
-        "prog.cena.desc": "¡A bailar toda la noche!",
-        "prog.map.church": "Ver mapa de la iglesia",
-        "prog.map.recep": "Ver mapa de la recepción",
-        "prog.map.hide": "Ocultar mapa",
-        "dress.title": "Código de Vestimenta",
-        "dress.desc": "Formal, Elegante",
-        "dress.sub": "Vestido y Traje",
-        "dress.footer": "✧ Ven con tu mejor versión para celebrar este día especial ✧",
-        "rsvp.title": "¿Nos acompañarás?",
-        "rsvp.subtitle": "Tu presencia es el mejor regalo",
-        "rsvp.deadline": "✧ Por favor confirmar su asistencia antes del 18 de Julio del 2026 ✧",
-        "rsvp.yes": "Sí, asistiré",
-        "rsvp.no": "No podré asistir",
-        "rsvp.form.name": "Tu nombre completo *",
-        "rsvp.form.placeholder.name": "Nombre y apellido",
-        "rsvp.form.companions": "¿Cuántos acompañantes traerás?",
-        "rsvp.companions.title": "Información de acompañantes",
-        "rsvp.companion": "Acompañante",
-        "rsvp.form.alcohol": "¿Consumirás alcohol?",
-        "rsvp.form.allergies.label": "¿Tiene alergias alimentarias?",
-        "rsvp.form.allergies.detail": "Detalle de alergias",
-        "rsvp.form.placeholder.allergies": "Describe las alergias...",
-        "rsvp.form.send": "Confirmar asistencia",
-        "rsvp.form.sending": "Enviando...",
-        "rsvp.success": "¡Gracias! Tu respuesta ha sido enviada correctamente.",
-        "rsvp.error": "Hubo un error al enviar tu respuesta.",
-        "rsvp.no.message1": "Lamentamos que no puedas acompañarnos en nuestro día especial.",
-        "rsvp.no.message2": "¡Estarás en nuestros pensamientos!",
-        "info.title": "Información Adicional",
-        "info.gallery.title": "Galería de Fotos",
-        "info.gallery.desc": "Aunque tenemos nuestro propio fotógrafo, te animamos a que compartas tus fotos.",
-        "info.gallery.qr": "✧Escanea el código QR para subir tus fotos y videos del día✧",
-        "info.hotel.title": "Información del Hotel",
-        "info.hotel.desc": "ForRest Hotel & Restaurant es un lugar unico, espacioso, rodeado de naturaleza e ideal para eventos inolvidables, cuenta con Spa, Piscina, Jacuzzi, Sauna, Masajes (Servicios especiales tienen cobros adicionales directo con el hotel).",
-        "info.hotel.location": "El hotel está a 2 minutos de nuestra Iglesia y cuenta con todas las comodidades necesarias.",
-        "info.hotel.contact": "¿Te gustaría llegar antes o quedarte más tiempo? Avísanos y organizaremos juntos tu estancia. Tenemos precios especiales para Nuestros invitados 💍",
-        "info.gifts.title": "Lista de Regalos",
-        "info.gifts.desc": "Vuestra presencia es nuestro mejor regalo. Sin embargo, en lugar de los tradicionales ramos de flores, apreciaremos una botella de vino 🍷 o un libro interesante. 📘 \n\n Además, en lugar de regalos convencionales, estaremos muy agradecidos por vuestro apoyo, para así iniciar nuestra vida juntos en Polonia ❤️",
-        "info.special.title": "Información Especial",
-        "info.special.arrival": "✧ Por Favor confirmar su asistencia antes del 18 de Julio del 2026 ✧\n\n✧ Recomendamos llegar con 15-20 minutos de antelación para encontrar estacionamiento y acomodarse ✧",
-        "info.hospedaje.title": "Hospedaje Pre-Boda",
-        "info.hospedaje.desc": "Para aquellos que vengan de fuera, hemos reservado habitaciones para ustedes en nuestro Hotel.\n Invitados tienen acceso al ForRest Hotel:\n check in 18 Septiembre 2026 - 15:00h \n check out 19 Septiembre 2026 - 10:00h\n\nSi desean entrar antes al Hotel ForRest - el hotel cobra 40 zł / hora / habitación.",
-        "footer.message": "✧ Con todo nuestro amor, esperamos celebrar este día especial contigo! ✧",
-        "common.yes": "Sí",
-        "common.no": "No",
-        "common.back": "Volver"
-      },
-      pl: {
-        "nav.home": "Strona główna",
-        "nav.message": "Wiadomość",
-        "nav.story": "Nasza historia",
-        "nav.gallery": "Galeria",
-        "nav.program": "Program",
-        "nav.rsvp": "RSVP",
-        "nav.info": "Informacje",
-        "hero.date": "Piątek, 18 września 2026 r.",
-        "hero.subtitle": "Bierzemy ślub i chcielibyśmy świętować go razem z Wami",
-        "count.title": "Odliczanie",
-        "count.subtitle": "Pozostało tylko...",
-        "days": "Dni",
-        "hours": "Godziny",
-        "minutes": "Minuty",
-        "seconds": "Sekundy",
-        "count.waiting": "Czekamy na Was z niecierpliwością i radością",
-        "arrived": "Nadszedł ten wielki dzień!",
-        // Mensaje de la pareja
-        "message.title": "Wiadomość prosto z serca",
-        "message.text1": "Drodzy Rodzice, Rodzino i Przyjaciele...",
-        "message.text2": "Ten dzień jest wyjątkowy nie tylko ze względu na nas, ale także dlatego, że to Wy - nasze rodziny i przyjaciele - jesteście częścią naszej historii. Każdy z Was zostawił trwały ślad w naszych sercach. Dziękujemy, że towarzyszycie nam w tej podróży, za Wasze wsparcie i za to, że czynicie tę chwilę jeszcze piękniejszą.",
-        // Nuestra historia
-        "story.title": "Nasza historia",
-        "story.subtitle": "Jak to się wszystko zaczęło...",
-        "story.meet.title": "✨ Jak się poznaliśmy ✨",
-        "story.meet.text1": "Nasze drogi skrzyżowały się w najmniej oczekiwanym momencie. Już od pierwszej rozmowy czuliśmy, że rodzi się między nami coś wyjątkowego. Każda wspólna chwila była cegiełką budującą historię, którą dziś z radością świętujemy.",
-        "story.meet.text2": "Wszystko zaczęło się w Madrycie – to właśnie tam pewien Peruwiańczyk postanowił zdobyć serce swojej polskiej Księżniczki ❤️....",
-        "story.meet.text3": "To bez wątpienia najpiękniejszy scenariusz, jaki napisało dla nas życie. Dwa światy, dwa kontynenty i dwa różne języki połączyły się w jeden. Wierzymy, że to przeznaczenie postawiło nas na swojej drodze, by pokazać, że miłość nie zna granic i jest gotowa na wszystko.",
-        "story.proposal.title": "💍 Oświadczyny 💍",
-        "story.proposal.text1": "To był naprawdę niezapomniany dzień – jedno „tak”, które na zawsze odmieniło nasze życie.",
-        "story.proposal.text2": "Mario Alejandro: Pamiętam, jak w myślach powtarzałem każde słowo, które chciałem jej powiedzieć. Pragnąłem, by poczuła, że płyną one prosto z serca. Podczas naszej podróży do Czarnogóry odwiedziliśmy trzy miasta. W dwóch pierwszych czułem, że to jeszcze nie ten moment... ale ostatnie z nich, Budva, okazało się miejscem idealnym.Byliśmy na plaży, otoczeni kojącym szumem fal. Tańczyliśmy wtuleni w siebie, jak dwie dusze, które do szczęścia potrzebowały odnaleźć siebie nawzajem. Serce biło mi jak oszalałe. Wiedziałem, że to właśnie ta chwila. Odłożyłem na bok wyćwiczone zdania i po prostu pozwoliłem mówić emocjom. Pełen drżenia, ale i bezgranicznej miłości, zapytałem: „Agnieszka Bonikowska, czy zechcesz wyjść za mnie?”. ",
-        "story.proposal.text3": "Dalsza część tej historii pisze się już każdego dnia w naszych sercach... ❤️ ",
-        "story.proposal.text4": "Agnieszka: A ja? Choć Mario dzielnie skrywał swoje zdenerwowanie, w jego oczach widziałam, że „coś się święci”... Kiedy padły te słowa, świat na moment się zatrzymał, a w głowie miałam tylko jedną odpowiedź.",
-        "story.proposal.text5": "Od tamtej chwili, za każdym razem, gdy patrzę na mój pierścionek, wracają te wszystkie emocje. Widzę w nim nie tylko blask tamtego wieczoru w Budvie, ale przede wszystkim naszą wspólną przyszłość.",
-        "story.proposal.text6": "Przepełnia mnie ogromna radość i to słodkie, niecierpliwe oczekiwanie na wszystko, co razem przeżyjemy. Wiem, że nasz ślub i wspólne świętowanie z Wami to dopiero początek – jeden z wielu najpiękniejszych dni, które są jeszcze przed nami.",
-        "story.footer": "✧ A teraz z wielką radością czekamy na 18 września 2026 roku ✧",
-        // Galería
-        "gallery.title": "Galeria wspomnień",
-        "gallery.subtitle": "Chwile, które na zawsze pozostaną w naszych sercach",
-        "gallery.placeholder": "📷 Dodaj tutaj swoje zdjęcie",
-        "gallery.footer": "✧ Przesuwaj, by zobaczyć więcej wyjątkowych chwil ✧",
-        // Programa
-        "prog.title": "Plan Uroczystości",
-        "prog.subtitle": "Piątek, 18 września 2026 r.",
-        "prog.misa": "MSZA ŚWIĘTA",
-        "prog.misa2": "15:00",
-        "info.misa.location": "kościół Św. Mikołaja w Zielonej Górze - Raculi",
-        "prog.recep": "PRZYJĘCIE WESELNE",
-        "info.recep.location": "ForRest Hotel & Restaurant, adres: ul. Głogowska 4, 66-004 Zielona Góra, Polska",
-        "prog.recep.desc": "Rozpoczęcie świętowania",
-        "prog.hotel.website": "Odwiedź stronę Hotelu",
-        "prog.coctel": "Toast powitalny",
-        "prog.coctel.desc": "Przekąski i napoje",
-        "prog.cena": "KOLACJA I ZABAWA",
-        "prog.cena.desc": "Tańce do białego rana!",
-        "prog.map.church": "Zobacz mapę dojazdu do kościoła",
-        "prog.map.recep": "Zobacz mapę dojazdu do sali",
-        "prog.map.hide": "Ukryj mapę",
-        "dress.title": "Dress Code",
-        "dress.desc": "Strój wizytowy / Elegancki",
-        "dress.sub": "Suknie wieczorowe i garnitury",
-        "dress.footer": "✧ Przygotujcie swoje najlepsze kreacje, aby wspólnie świętować ten wyjątkowy dzień ✧",
-        "rsvp.title": "Czy będziesz z nami?",
-        "rsvp.subtitle": "Twoja obecność jest dla nas najpiękniejszym prezentem",
-        "rsvp.deadline": "✧ Prosimy o potwierdzenie przybycia do dnia 18 lipca 2026 r. ✧",
-        "rsvp.form.info": "Twoje dane",
-        "rsvp.yes": "Tak, będę obecny / obecna",
-        "rsvp.no": "Niestety nie będę mógł / mogła uczestniczyć",
-        "rsvp.no.message2": "Będziesz obecny w naszych myślach!",
-        "rsvp.no.message1": "Bardzo nam przykro, że nie możesz towarzyszyć nam w tym wyjątkowym dniu.",
-        "rsvp.form.name": "Imię i nazwisko *",
-        "rsvp.form.placeholder.name": "Imię i nazwisko",
-        "rsvp.form.companions": "Ilu gości będzie Ci towarzyszyć?",
-        "rsvp.companions.title": "Informacje o osobach towarzyszących",
-        "rsvp.companion": "Osoba towarzysząca",
-        "rsvp.form.alcohol": "Czy będziesz spożywać alkohol?",
-        "rsvp.form.allergies.label": "Czy masz alergie pokarmowe?",
-        "rsvp.form.allergies.detail": "Szczegóły alergii",
-        "rsvp.form.placeholder.allergies": "Opisz alergie...",
-        "rsvp.form.send": "Potwierdź obecność",
-        "rsvp.form.sending": "Wysyłanie...",
-        "rsvp.success": "Dziękujemy! Twoja odpowiedź została poprawnie wysłana.",
-        "rsvp.error": "Wystąpił błąd podczas wysyłania odpowiedzi. Spróbuj ponownie.",
-        "info.title": "Informacje dodatkowe",
-        "info.gallery.title": "Galeria zdjęć",
-        "info.gallery.desc": "Chociaż mamy własnego fotografa, zachęcamy do dzielenia się swoimi zdjęciami.",
-        "info.gallery.qr": "✧ Zeskanuj kod QR, aby dodać zdjęcia ✧",
-        "info.hotel.title": "Informacje o hotelu",
-        "info.hotel.desc": "ForRest Hotel & Restaurant to wyjątkowe, przestronne miejsce w sercu natury, w którym każde wydarzenie staje się niezapomnianym przeżyciem. Oferuje spa, basen, jacuzzi, saunę oraz masaże (usługi dodatkowe płatne bezpośrednio w hotelu).",
-        "info.hotel.location": "Hotel znajduje się 2 minuty od naszego kościoła i zapewnia wszelkie niezbędne udogodnienia.",
-        "info.hotel.contact": "Chcesz przyjechać wcześniej lub zostać dłużej? Daj nam znać – pomożemy zorganizować Twój pobyt. Mamy specjalne ceny dla naszych gości 💍",
-        "info.special.title": "Ważne informacje",
-        "info.special.arrival": "✧ Prosimy o potwierdzenie przybycia do dnia 18 lipca 2026 r. ✧\n\n✧ Zalecamy przybycie 15–20 minut wcześniej, aby znaleźć miejsce parkingowe i spokojnie się przygotować ✧",
-        "info.gifts.title": "Prezenty",
-        "info.gifts.desc": "Wasza obecność jest dla nas najpiękniejszym prezentem. Będzie nam bardzo miło, jeśli zamiast tradycyjnych kwiatów zechcecie nas obdarować butelką wina 🍷 lub ciekawą książką.📘\n\nPonadto, zamiast konwencjonalnych prezentów, będziemy bardzo wdzięczni za Wasze wsparcie, aby rozpocząć nasze wspólne życie w Polsce ❤️",
-        "info.hospedaje.title": "Zakwaterowanie przed ślubem",
-        "info.hospedaje.desc": "Dla gości przyjezdnych zarezerwowaliśmy pokoje w hotelu ForRest.\n\nZameldowanie 18 września 2026, godz. 15:00\nwymeldowanie 19 września 2026, godz. 10:00\n\nWcześniejsze zameldowanie/wymeldowanie: 40 zł za godzinę za pokój.",
-        "footer.message": "✧ Mamy nadzieję, że będziemy mogli świętować ten wyjątkowy dzień razem z Tobą! ✧",
-        "common.yes": "Tak",
-        "common.no": "Nie",
-        "common.back": "Powrót"
-        }
-      };
+    
+  
 
       function switchLanguage(lang) {
       // Cambiar el atributo lang del HTML
